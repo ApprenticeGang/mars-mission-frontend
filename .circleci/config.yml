@@ -5,7 +5,7 @@ executors:
   node-executor:
     docker:
       - image: cimg/node:14.10.0
-    working_directory: /tmp
+    working_directory: /mars-mission
 jobs:
   test:
     executor: node-executor
@@ -23,9 +23,9 @@ jobs:
     executor: node-executor
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: /mars-mission/workspace
       - aws-s3/sync:
-          from: /tmp/workspace
+          from: /mars-mission/workspace
           to: 's3://mars-mission-integration'
 workflows:
   version: 2
