@@ -1,11 +1,12 @@
 ﻿version: 2.1
 jobs:
-  build:
+  build_test_deploy:
     docker:
       - image: cimg/node:14.10.0
     steps:
       - checkout
-      - run: npm run build
+      - run: npm install
+      - run: npm run test:coverage
   test:
     docker:
       - image: cimg/node:14.10.0
@@ -14,6 +15,4 @@ jobs:
 workflows:
   on_commit:
     jobs:
-      - build
-      - test
-          
+      - build_test_deploy          
