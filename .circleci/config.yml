@@ -1,8 +1,6 @@
 ﻿version: 2.1
-orbs:
-  aws-s3: circleci/aws-s3@1.0.16
 jobs:
-  test:
+  build_test_deploy:
     docker:
       - image: cimg/node:14.10.0
     steps:
@@ -10,22 +8,12 @@ jobs:
       - run: npm install
       - run: npm run test:coverage
       - run: npm run lint
-  deploy:
+  test:
     docker:
       - image: cimg/node:14.10.0
     steps:
-      - run: npm run build
-      - aws-s3/sync:
-          from: build
-          to: 's3://mars-mission-integration'
+      - run: npm run test:coverage
 workflows:
-  version: 2
   on_commit:
     jobs:
-      - test
-      - deploy:
-          requires: 
-            - test
-          filters:
-            branches:
-              only: master
+      - build_test_deploy          
