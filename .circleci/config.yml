@@ -19,6 +19,7 @@ jobs:
           from: build
           to: 's3://mars-mission-integration'
 workflows:
+  version: 2
   on_commit:
     jobs:
       - test
