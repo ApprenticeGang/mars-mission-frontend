@@ -27,4 +27,4 @@ workflows:
           - test
         filters:
           branches:
-            - master
+            only: master
