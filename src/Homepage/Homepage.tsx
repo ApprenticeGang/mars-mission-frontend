@@ -3,8 +3,8 @@ import styles from './Homepage.module.scss';
 
 export function Home() {
     return (
-    <div className={styles.homepage}>
-    <h2>Home</h2>
-    </div>
+        <div className={styles.homepage}>
+            <h2>Home</h2>
+        </div>
     );
-  }
+}
