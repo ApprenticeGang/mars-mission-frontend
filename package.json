@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "EXTEND_ESLINT=true react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "test:coverage": "react-scripts test --watchAll=false --coverage",
     "test:watch": "react-scripts test --watchAll",
@@ -32,7 +32,12 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1, "maxBOF": 0 }],
+      "semi": ["error", "always"],
+      "indent": ["error", 4]
+    }
   },
   "browserslist": {
     "production": [
