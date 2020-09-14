@@ -18,7 +18,6 @@ jobs:
           paths:
             - build/*
       - run: npm run test:coverage
-      - run: npm run lint
   deploy:
     executor: node-executor
     steps:
