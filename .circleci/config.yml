@@ -28,7 +28,7 @@ jobs:
           at: ~/mars-mission
       - run: npm run build
       - aws-s3/sync:
-          from: /tmp/mars-mission/workspace
+          from: ~/mars-mission/build
           to: 's3://mars-mission-integration'
 workflows:
   on_commit:
