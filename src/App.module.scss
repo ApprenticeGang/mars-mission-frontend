@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani&display=swap');
+
+@mixin title($textcolor: white) {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 26px;
+  color: $textcolor;
 }
 
-.appLogo {
-  height: 40vmin;
-  pointer-events: none;
+@mixin blackTitle($textcolor) {
+  @include title(black);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .appLogo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.appHeader {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.subtitles {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 20px;
   color: white;
+  font-weight: bold;
 }
 
-.appLink {
-  color: #61dafb;
+.text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.border {
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.red {
+  background-color: #631111;
+}
+
+.beige {
+  background-color: #9D887C;
+}
+
+.button {
+  box-shadow: 4px 6px 8px #888888;
 }
