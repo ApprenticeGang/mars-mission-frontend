@@ -5,7 +5,7 @@ executors:
   node-executor:
     docker:
       - image: cimg/node:14.10.0
-    working_directory: /tmp/mars-mission
+    working_directory: ~/mars-mission
 jobs:
   test:
     executor: node-executor
@@ -13,16 +13,16 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run test:coverage
-      - run: npm run build
       - persist_to_workspace:
-          root: workspace
+          root: .
           paths:
-            - build/*
+            - .
   deploy:
     executor: node-executor
     steps:
       - attach_workspace:
-          at: /tmp/mars-mission/workspace
+          at: ~/mars-mission
+      - run: npm run build
       - aws-s3/sync:
           from: /tmp/mars-mission/workspace
           to: 's3://mars-mission-integration'
