@@ -7,3 +7,9 @@ test('renders Rover explorer link', () => {
     const linkElement = getByText(/Rover explorer/i);
     expect(linkElement).toBeInTheDocument();
 });
+
+test('renders Opportunity link', () => {
+    const { getByText } = render(<App />);
+    const linkElement = getByText(/Opportunity/i);
+    expect(linkElement).toBeInTheDocument();
+});
