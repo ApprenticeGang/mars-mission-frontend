@@ -1,30 +1,41 @@
 ﻿version: 2.1
 orbs:
   aws-s3: circleci/aws-s3@1.0.16
-jobs:
-  test:
+executors:
+  node-executor:
     docker:
       - image: cimg/node:14.10.0
+    working_directory: ~/mars-mission
+jobs:
+  test:
+    executor: node-executor
     steps:
       - checkout
       - run: npm install
       - run: npm run test:coverage
-      - run: npm run lint
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
   deploy:
-    docker:
-      - image: cimg/node:14.10.0
+    executor: node-executor
     steps:
+      - run: sudo apt-get update && sudo apt-get install -y python-dev
+      - run: sudo curl -O https://bootstrap.pypa.io/get-pip.py
+      - run: sudo python get-pip.py
+      - run: sudo pip install awscli --upgrade
+      - attach_workspace:
+          at: ~/mars-mission
       - run: npm run build
       - aws-s3/sync:
-          from: build
+          from: ~/mars-mission/build
           to: 's3://mars-mission-integration'
 workflows:
-  version: 2
   on_commit:
     jobs:
       - test
       - deploy:
-          requires: 
+          requires:
             - test
           filters:
             branches:
