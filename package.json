@@ -26,12 +26,12 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "resize-observer-polyfill": "^1.5.1",
+    "typescript": "^3.7.5",
+    "typescript-plugin-css-modules": "2.4.0",
     "three": "^0.120.1",
     "three-glow-mesh": "^0.1.2",
     "three.interaction": "^0.2.3",
-    "tippy.js": "^6.2.6",
-    "typescript": "^3.7.5",
-    "typescript-plugin-css-modules": "2.4.0"
+    "tippy.js": "^6.2.6"
   },
   "scripts": {
     "start": "react-scripts start",
