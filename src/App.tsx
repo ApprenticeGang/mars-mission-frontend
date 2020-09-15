@@ -1,41 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import Hamburger from 'hamburger-react';
-import { useState } from 'react';
+import React from "react";
 import styles from './App.module.scss';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import { Home } from "./Homepage/Homepage";
+import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
+import { TimelineID } from "./TimelineID/TimelineID";
 
-function App() {
-  //hamurger toggle state
-  const [isOpen, setOpen] = useState(false)
+export default function App() {
+    return (
+        <Router>
+                <nav>
+                    <ul className={styles.navbarUl}>
+                        <li className={styles.navbarLi}>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li className={styles.navbarLi}>
+                            <Link to="/rover_explorer">Rover explorer</Link>
+                        </li>
+                        <li className={styles.navbarLi}>
+                            <Link to="/timeline/opportunity">Opportunity</Link>
+                        </li>
+                        <li className={styles.navbarLi}>
+                            <Link to="/timeline/spirit">Spirit</Link>
+                        </li>
+                        <li className={styles.navbarLi}>
+                            <Link to="/timeline/curiosity">Curiosity</Link>
+                        </li>
+                        <li className={styles.navbarLi}>
+                            <Link to="/timeline/perserverance">Perserverance</Link>
+                        </li>
+                    </ul>
+                </nav>
 
-  return (
-    <div className={styles.App}>
-      <header className={styles.appHeader}>
-      <Hamburger toggled={isOpen} toggle={setOpen} />
-        {/* <img src={logo} className="appLogo" alt="logo" /> */}
-        <h1 className={styles.title}>Testing Title style</h1>
-        <p className={styles.subtitle}>Testing Subtitle style</p>
-        <p className={styles.text}>Testing text style</p>
-        <a
-          className={styles.appLink}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+                <Switch>
+                    <Route path="/rover_explorer">
+                        <RoverExplorer />
+                    </Route>
+                    <Route path="/timeline/:id">
+                        {<TimelineID />}
+                    </Route>
+                    <Route path="/">
+                        <Home />
+                    </Route>
+                </Switch>
+        </Router>
+    );
 }
 
-export default App;
-
-
-
-      {/* <link href="dist/hamburgers.css" rel="stylesheet"/>
-      <button className={styles.hamburger hamburger--spring} type="button">
-      <span className={styles.hamburgerBox}>
-        <span className={styles.hamburgerInner}></span>
-      </span>
-    </button> */}

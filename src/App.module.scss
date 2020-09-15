@@ -22,3 +22,28 @@
 .button {
   box-shadow: 4px 6px 8px #888888;
 }
+
+.navbarUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbarLi {
+  display: inline-block;
+  transition: 2s;
+
+  &:hover {
+    background-color: red;
+}
+}
+
+.navbarLi a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+}
