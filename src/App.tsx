@@ -10,7 +10,6 @@ import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
 import { TimelineID } from "./TimelineID/TimelineID";
 
-
 export default function App() {
     return (
         <Router>
@@ -51,5 +50,4 @@ export default function App() {
         </Router>
     );
 }
-
 

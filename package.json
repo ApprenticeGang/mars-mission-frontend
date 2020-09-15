@@ -22,6 +22,7 @@
     "react-scripts": "3.4.3",
     "typescript": "^3.7.5",
     "typescript-plugin-css-modules": "2.4.0"
+
   },
   "scripts": {
     "start": "react-scripts start",

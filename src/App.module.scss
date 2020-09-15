@@ -1,3 +1,28 @@
+@import './generalStyle.scss';
+
+.title {
+  @include title($textColor: $colorTextBeige);
+}
+
+.subtitle {
+  @include subtitle();
+}
+
+.text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  color: red;
+}
+
+.border {
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.button {
+  box-shadow: 4px 6px 8px #888888;
+}
+
 .navbarUl {
   list-style-type: none;
   margin: 0;
@@ -22,5 +47,3 @@
   padding: 14px 40px;
   text-decoration: none;
 }
-
-
