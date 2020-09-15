@@ -11,8 +11,8 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
-    "@typescript-eslint/eslint-plugin": "4.1.0",
-    "@typescript-eslint/parser": "4.1.0",
+    "@typescript-eslint/eslint-plugin": "4.0.1",
+    "@typescript-eslint/parser": "4.0.1",
     "eslint": "6.6.0",
     "eslint-plugin-react": "7.20.6",
     "node-sass": "4.14.1",
@@ -22,7 +22,6 @@
     "react-scripts": "3.4.3",
     "typescript": "^3.7.5",
     "typescript-plugin-css-modules": "2.4.0"
-
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,10 +29,8 @@
     "test": "react-scripts test --watchAll=false",
     "test:coverage": "react-scripts test --watchAll=false --coverage",
     "test:watch": "react-scripts test --watchAll",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "lint": "eslint ./src/**/*.ts ./src/**/*.tsx",
+    "lint:fix": "eslint --fix ./src/**/*.ts ./src/**/*.tsx"
   },
   "browserslist": {
     "production": [
