@@ -2,7 +2,7 @@ import React, {FunctionComponent} from "react";
 import styles from './TimelineID.module.scss';
 
 
-export const TimelineID: FunctionComponent = () => {
+export const TimelineId: FunctionComponent = () => {
     const id = "";
     return (
         <div className={styles.timelineID}>

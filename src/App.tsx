@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
-import { TimelineID } from "./TimelineID/TimelineID";
+import { TimelineId } from "./TimelineID/TimelineId";
 
 export const App: FunctionComponent = () => {
     return (
@@ -41,7 +41,7 @@ export const App: FunctionComponent = () => {
                         <RoverExplorer />
                     </Route>
                     <Route path="/timeline/:id">
-                        {<TimelineID />}
+                        {<TimelineId />}
                     </Route>
                     <Route path="/">
                         <Home />
