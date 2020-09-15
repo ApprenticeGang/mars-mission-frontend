@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
+import { Mars } from './InteractiveMars/Mars';
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <Mars />
     </React.StrictMode>,
     document.getElementById('root')
 );
