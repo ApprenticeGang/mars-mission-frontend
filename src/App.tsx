@@ -37,13 +37,13 @@ export default function App() {
                 </nav>
 
                 <Switch>
-                    <Route path="/rover_explorer">
+                    <Route exact path="/rover_explorer">
                         <RoverExplorer />
                     </Route>
-                    <Route path="/timeline/:id">
+                    <Route exact path="/timeline/:id">
                         {<TimelineID />}
                     </Route>
-                    <Route path="/">
+                    <Route exact path="/">
                         <Home />
                     </Route>
                 </Switch>
