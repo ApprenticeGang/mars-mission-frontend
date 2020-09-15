@@ -15,7 +15,8 @@
     "react-scripts": "3.4.3",
     "typescript": "^3.7.5",
     "node-sass": "4.14.1",
-    "typescript-plugin-css-modules": "2.4.0"
+    "typescript-plugin-css-modules": "2.4.0",
+    "hamburger-react": "2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

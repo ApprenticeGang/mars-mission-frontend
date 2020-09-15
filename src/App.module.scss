@@ -1,39 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani&display=swap');
+@import './generalStyle.scss';
 
-@mixin title($textcolor: white) {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 26px;
-  color: $textcolor;
+.title {
+  @include title($textColor: $colorTextBeige);
 }
 
-@mixin blackTitle($textcolor) {
-  @include title(black);
-}
-
-.subtitles {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
+.subtitle {
+  @include subtitle();
 }
 
 .text {
   font-family: 'Rajdhani', sans-serif;
   font-size: 14px;
+  color: red;
 }
 
 .border {
   border-radius: 5px;
   border: 1px solid white;
-}
-
-.red {
-  background-color: #631111;
-}
-
-.beige {
-  background-color: #9D887C;
 }
 
 .button {
