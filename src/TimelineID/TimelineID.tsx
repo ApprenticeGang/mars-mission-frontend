@@ -1,8 +1,8 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 import styles from './TimelineID.module.scss';
 
 
-export function TimelineID() {
+export const TimelineID: FunctionComponent = () => {
     const id = "";
     return (
         <div className={styles.timelineID}>

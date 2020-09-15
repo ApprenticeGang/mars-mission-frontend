@@ -1,4 +1,4 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 import styles from './App.module.scss';
 import {
     BrowserRouter as Router,
@@ -10,7 +10,7 @@ import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
 import { TimelineID } from "./TimelineID/TimelineID";
 
-export default function App() {
+export const App: FunctionComponent = () => {
     return (
         <Router>
                 <nav>
