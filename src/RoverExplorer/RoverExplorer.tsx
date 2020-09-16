@@ -14,7 +14,7 @@ export function RoverExplorer() {
     <section>
     
       <div className={styles.Content}>
-        <header className={styles.Header}><div className={styles.HeaderText}>Rover Explorer</div></header>
+        <header className={styles.Header}><h1 className={styles.HeaderText}>Rover Explorer</h1></header>
         <div className={styles.GridContainer}>
             <Button as={Link} to="/timeline/perserverance" className={styles.GridItem1}>Perserverance</Button>
             <Button as={Link} to="/timeline/oppertunity" className={styles.GridItem2}>Oppertunity</Button>
