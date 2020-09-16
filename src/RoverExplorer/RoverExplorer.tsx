@@ -14,12 +14,13 @@ export function RoverExplorer () {
     <section>
     <div className ={styles.Body}>
     <header className= {styles.Header}><div className ={styles.HeaderText}>Rover Explorer</div></header>
+    
     <div className={styles.GridContainer}>
-      <Button as={Link} to="/timeline/perserverance" className={styles.GridItem1}>perserverance</Button>
-      <div className={styles.GridItem2}>2</div>
-      <div className={styles.GridItem3}>3</div>  
-      <div className={styles.GridItem4}>4</div>
-      <div className={styles.GridItem5}>5</div>
+      <Button as={Link} to="/timeline/perserverance" className={styles.GridItem1}>Perserverance</Button>
+      <Button as={Link} to="/timeline/oppertunity"className={styles.GridItem2}>Oppertunity</Button>
+      <Button as={Link} to="/timeline/spirit"className={styles.GridItem3}>Spirit</Button>  
+      <Button as={Link} to="/timeline/curiosity"className={styles.GridItem4}>Curiosity</Button>
+      <Button as={Link} to="/view_all"className={styles.GridItem5}>View All</Button>
       </div>
     </div>
     </section>    

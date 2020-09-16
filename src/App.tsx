@@ -9,6 +9,7 @@ import {
 import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
 import { TimelineID } from "./TimelineID/TimelineID";
+import {AllImages} from "./ViewAllImages/AllImages";
 
 export default function App() {
     return (
@@ -45,6 +46,11 @@ export default function App() {
                     </Route>
                     <Route exact path="/">
                         <Home />
+                    </Route>
+                    <Route excat path="/view_all">
+                       <AllImages/> 
+
+
                     </Route>
                 </Switch>
         </Router>
