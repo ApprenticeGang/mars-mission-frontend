@@ -1,80 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
 @import "../generalStyle.scss";
 
-@mixin GridItem{
-    align-items: center; 
+@mixin GridItem {
+    align-items: center;
     text-align: center;
-     vertical-align: middle; 
-     line-height: 200px;
-      font-size: 20px; 
-      color: white;
-      border-radius: 3%; 
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border-color: white;
-      border-style: inset;
-      border-width:0.1px;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      background-color: grey;
-      @include subtitle;
+    vertical-align: middle;
+    line-height: 200px;
+    font-size: 20px;
+    color: $colorTextLight;
+    border-radius: 3%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-color: white;
+    border-style: inset;
+    border-width: 0.1px;
+    height: 100%;
+    @include subtitle;
 }
 
 
-.GridItem, img {
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-}
 
-.Body, html {
-    background:url("https://s3.amazonaws.com/psiu/wallpapers/ESP_018820_2035/ESP_018820_2035_phone.jpg");
-    height: 100%;
+.Content {
+    background: url("https://s3.amazonaws.com/psiu/wallpapers/ESP_018820_2035/ESP_018820_2035_phone.jpg");
+    min-height: 825px;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
-    
+    position: relative;
+
 }
 
 
-.GridItem1 { @include GridItem; grid-area: one;  background:url("https://i.ibb.co/XZ8Twv5/Webp-net-resizeimage-3.png") }
-.GridItem2 { @include GridItem; grid-area: two; background:url("https://i.ibb.co/1QccDpz/Webp-net-resizeimage-1.png");}
-.GridItem3 { @include GridItem; grid-area: three; background:url("https://i.ibb.co/rs9G24H/Webp-net-resizeimage-5.png")}
-.GridItem4 { @include GridItem; grid-area: four; background:url("https://i.ibb.co/KKnNjp3/Webp-net-resizeimage-2.png")}
-.GridItem5 {@include GridItem; grid-area: five; background:url("https://d33wubrfki0l68.cloudfront.net/94c1dd8801b90ba20a20057a085c5897b880d89b/0fbd9/images/esp_021892_1775_preview.jpg")}
+.GridItem1 {
+    @include GridItem;
+    grid-area: one;
+    background: url("https://i.ibb.co/XZ8Twv5/Webp-net-resizeimage-3.png");
+}
+
+.GridItem2 {
+    @include GridItem;
+    grid-area: two;
+    background: url("https://i.ibb.co/1QccDpz/Webp-net-resizeimage-1.png");
+}
+
+.GridItem3 {
+    @include GridItem;
+    grid-area: three;
+    background: url("https://i.ibb.co/rs9G24H/Webp-net-resizeimage-5.png");
+}
+
+.GridItem4 {
+    @include GridItem;
+    grid-area: four;
+    background: url("https://i.ibb.co/KKnNjp3/Webp-net-resizeimage-2.png");
+}
+
+.GridItem5 {
+    @include GridItem;
+    grid-area: five;
+    background: url("https://d33wubrfki0l68.cloudfront.net/94c1dd8801b90ba20a20057a085c5897b880d89b/0fbd9/images/esp_021892_1775_preview.jpg");
+}
 
 .GridContainer {
     display: grid;
     grid-template-areas:
-      'one one  two two'
-      ' three three four four'
-      ' five five five five';
+        'one one  two two'
+        ' three three four four'
+        ' five five five five';
     grid-gap: 20px;
     grid-template-rows: 200px 200px 175px;
     padding: 10%;
     max-width: 1200px;
     left: 0;
-	right: 0;
-      margin: auto;
-      height: 0;
-      padding-bottom: 56.25%; /* 16:9 */
-      position: relative;
-      
-  }
-  
-  .Header{
-      position:relative;
-      height: 100px;
-      background-color: #ffffff;
-      opacity:0.65;
-      margin-bottom: 1%;
-  }
+    right: 0;
+    margin: auto;
+    height: 0;
+    position: relative;
 
-  .HeaderText{
+}
+
+.Header {
+    position: relative;
+    height: 100px;
+    background-color: #ffffff;
+    opacity: 0.65;
+    margin-bottom: 1%;
+}
+
+.HeaderText {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -82,18 +97,13 @@
     font-family: 'Orbitron', sans-serif;
     font-size: 20px;
     color: $colorTextDark;
-  }
+}
 
-  a:link {
+a:link {
     text-decoration: none;
     color: $colorTextLight;
-  }
+}
 
-  a:visited {
-      color: $colorTextLight;
-  }
-
-  .nav{
-    
-  }
-  
+a:visited {
+    color: $colorTextLight;
+}

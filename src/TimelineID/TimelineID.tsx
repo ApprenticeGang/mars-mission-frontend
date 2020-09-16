@@ -6,8 +6,8 @@ import {
     Route,
     Link,
     useParams
-  } from "react-router-dom";
-  
+} from "react-router-dom";
+
 interface TimelineID {
     id: string
 }

@@ -34,8 +34,8 @@ export default function App() {
                         <li className={styles.navbarLi}>
                             <Link to="/timeline/perserverance">Perserverance</Link>
                         </li>
-                    </ul>
-                </nav>
+                    </ul> 
+               </nav>
 
                 <Switch>
                     <Route exact path="/rover_explorer">
