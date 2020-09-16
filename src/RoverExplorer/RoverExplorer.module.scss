@@ -24,7 +24,7 @@
 
 
 .Content {
-    background: url("https://s3.amazonaws.com/psiu/wallpapers/ESP_018820_2035/ESP_018820_2035_phone.jpg");
+    background: url("/public/images/rover_explorer_page_background.jpg");
     min-height: 825px;
     background-position: center;
     background-size: cover;
@@ -94,9 +94,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
-    color: $colorTextDark;
+    @include roverPageTitle;
 }
 
 a:link {
