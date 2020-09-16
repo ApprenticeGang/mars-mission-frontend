@@ -12,10 +12,10 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.5",
-    "@typescript-eslint/eslint-plugin": "4.1.0",
-    "@typescript-eslint/parser": "4.1.0",
     "d3-scale": "^3.2.2",
     "es6-tween": "^5.5.11",
+    "@typescript-eslint/eslint-plugin": "4.0.1",
+    "@typescript-eslint/parser": "4.0.1",
     "eslint": "6.6.0",
     "eslint-plugin-react": "7.20.6",
     "node-sass": "4.14.1",
@@ -39,12 +39,8 @@
     "test": "react-scripts test --watchAll=false",
     "test:coverage": "react-scripts test --watchAll=false --coverage",
     "test:watch": "react-scripts test --watchAll",
-    "lint": "eslint src/**/*.ts src/**/*.tsx",
-    "lint:fix": "eslint --fix src/**/*.ts src/**/*.tsx",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "lint": "eslint ./src/**/*.ts ./src/**/*.tsx",
+    "lint:fix": "eslint --fix ./src/**/*.ts ./src/**/*.tsx"
   },
   "browserslist": {
     "production": [
@@ -63,7 +59,8 @@
       "src/**/*.{ts,tsx}",
       "!src/index.tsx",
       "!src/react-app-env.d.ts",
-      "!src/InteractiveMars/Markers.tsx"
+      "!src/InteractiveMars/Markers.tsx",
+      "!src/InteractiveMars/Mars.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -72,6 +69,9 @@
         "lines": 100,
         "statements": 100
       }
-    }
+    },
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+  }
   }
 }

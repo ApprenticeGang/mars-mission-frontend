@@ -1,13 +1,13 @@
 
-interface Marker {
-    id: number;
-    rover: string;
-    color: string;
-    coordinates: number[];
-    value: number;
-}
+// interface Marker {
+//     id: number;
+//     rover: string;
+//     color: string;
+//     coordinates: number[];
+//     value: number;
+// }
 
-export const Markers: Marker[] = [
+export const markers = [
     {
         id: 1,
         rover: 'Curiosity',

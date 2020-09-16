@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+@import './generalStyle.scss';
+
+.title {
+  @include title($textColor: $colorTextBeige);
 }
 
-.appLogo {
-  height: 40vmin;
-  pointer-events: none;
+.subtitle {
+  @include subtitle();
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .appLogo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  color: red;
 }
 
-.appHeader {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.border {
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.button {
+  box-shadow: 4px 6px 8px #888888;
+}
+
+.navbarUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbarLi {
+  display: inline-block;
+  transition: 2s;
+
+  &:hover {
+    background-color: red;
+}
+}
+
+.navbarLi a {
+  display: block;
   color: white;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
 }
 
-.appLink {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.marsbutton {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #631111;
+  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4);
+  padding: 24px 50px;
+  color: white;
+  font-weight: bolder;
+  border-radius: 15px;
+  font-size : 40px;
+  position: absolute;
+  left: 50%;
+  top: 50% ;
+  transform: translate(-50%, -50%)
 }
