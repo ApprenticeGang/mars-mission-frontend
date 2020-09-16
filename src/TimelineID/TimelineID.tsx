@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import styles from './TimelineID.module.scss';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams
-} from "react-router-dom";
+
 
 interface TimelineID {
     id: string
