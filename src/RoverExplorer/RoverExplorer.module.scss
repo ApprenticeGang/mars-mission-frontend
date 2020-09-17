@@ -24,7 +24,7 @@
 
 
 .Content {
-    background: url("/public/images/rover_explorer_page_background.jpg");
+    background: url("/images/rover_explorer_page_background.jpg");
     min-height: 825px;
     background-position: center;
     background-size: cover;
@@ -36,32 +36,34 @@
 .GridItem1 {
     @include GridItem;
     grid-area: one;
-    background: url("https://i.ibb.co/XZ8Twv5/Webp-net-resizeimage-3.png");
+    background: url("/images/perserverance_rover.png");
 }
 
 .GridItem2 {
     @include GridItem;
     grid-area: two;
-    background: url("https://i.ibb.co/1QccDpz/Webp-net-resizeimage-1.png");
+    background: url("/images/oppertunity_rover.png");
 }
 
 .GridItem3 {
     @include GridItem;
     grid-area: three;
-    background: url("https://i.ibb.co/rs9G24H/Webp-net-resizeimage-5.png");
+    background: url("/images/spirit_rover.png");
 }
 
 .GridItem4 {
     @include GridItem;
     grid-area: four;
-    background: url("https://i.ibb.co/KKnNjp3/Webp-net-resizeimage-2.png");
+    background: url("/images/curiosity_rover.png");
 }
 
 .GridItem5 {
     @include GridItem;
     grid-area: five;
-    background: url("https://d33wubrfki0l68.cloudfront.net/94c1dd8801b90ba20a20057a085c5897b880d89b/0fbd9/images/esp_021892_1775_preview.jpg");
+    background: url("/images/view_all_images_cover.jpg");
 }
+
+
 
 .GridContainer {
     display: grid;
@@ -86,7 +88,7 @@
     height: 100px;
     background-color: #ffffff;
     opacity: 0.65;
-    margin-bottom: 1%;
+    //   margin-bottom: 1%;
 }
 
 .HeaderText {
