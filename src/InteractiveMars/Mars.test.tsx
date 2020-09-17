@@ -10,15 +10,16 @@ test('renders Mars ', () => {
 });
 
 test('Tooltip returns info', () => {
-    const marker: Marker = 
+    const markers: Marker =
         {
             id: "1",
             rover: 'Curiosity',
             color: 'red',
             coordinates: [4.5895, 137.4417],
             value: 35,
-        }
-
-    const output = `ROVER: ${marker.rover}`
-    expect(renderToolTipsOnHover(marker)).toBe(output)
+        };
+    
+    const toolTipText = renderToolTipsOnHover(markers);
+    
+    expect(toolTipText).toBe("ROVER: Curiosity");
 })

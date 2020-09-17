@@ -9,9 +9,6 @@ import {markers} from "./Markers"
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 
-
-//Function to render onHover tooltips
-
 export function renderToolTipsOnHover(marker: Marker): string {
   return `ROVER: ${marker.rover}`;
 }
