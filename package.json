@@ -70,8 +70,8 @@
         "statements": 100
       }
     },
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-  }
+    "moduleNameMapper": {
+      "react-globe": "<rootDir>/src/Stubs/StubReactGlobe.tsx"
+    }
   }
 }
