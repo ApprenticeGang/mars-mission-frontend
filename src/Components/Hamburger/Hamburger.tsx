@@ -13,13 +13,12 @@ interface HamburgerProps {
     setMenuOpen: (menuOpen: boolean) => void;
 }
 export const HamburgerMenu: FunctionComponent<HamburgerProps> = ({ menuOpen, setMenuOpen }) => {
-    //   const [status, setStatus] = useState(styles.close);
-
-    return <div className={menuOpen ? `${styles.hamburgerMenu} ${styles.open}` : styles.hamburgerMenu}>
+   
+    return <div className={menuOpen ? `${styles.hamburgerMenu} ${styles.open}` : styles.hamburgerMenu} data-testid="Hamburger Container">
         <button
+            data-testid = "Hamburger Button"
             className={styles.BurgerMenu__container}
-        onClick={() => setMenuOpen(!menuOpen)}
-        >
+        onClick={() => setMenuOpen(!menuOpen)}>
             <i></i>
             <i></i>
             <i></i>
@@ -50,7 +49,7 @@ const NavLink: FunctionComponent<LinkProps> = ({ setMenuOpen, text, location }) 
 
     return (
         <li className={styles.navbarLi} >
-            <Link to={location} onClick={() => setMenuOpen(false)} className={styles.navLink}>{text}</Link>
+            <Link to={location} onClick={() => setMenuOpen(false)} className={styles.navLink} data-testid={`${text} Page Link`}>{text}</Link>
         </li>
     )
 }

@@ -20,7 +20,7 @@ export const App: FunctionComponent = () => {
         <Router>
             <Navbar />
             <HamburgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-            <div onClick={() => {setMenuOpen(false)}}>
+            <div onClick={() => {setMenuOpen(false)}} data-testid= "Clear nav">
             <Switch>
                 <Route path="/rover_explorer">
                     <RoverExplorer />
