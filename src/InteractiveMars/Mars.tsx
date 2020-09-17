@@ -11,14 +11,14 @@ import "tippy.js/animations/scale.css";
 
 
 //Function to render onHover tooltips
-  /* istanbul ignore next */
-export function markerTooltipRenderer(marker: Marker): string {
-  return `ROVER: ${marker.rover} `;
+
+export function renderToolTipsOnHover(marker: Marker): string {
+  return `ROVER: ${marker.rover}`;
 }
 
 //Options for globe, more options found at https://react-globe.netlify.app/usage/options
 const options = {
-  markerTooltipRenderer,
+  renderToolTipsOnHover,
   cameraAutoRotateSpeed: 0.8,
   cameraMaxPolarAngle: (Math.PI * 9) / 16,
   cameraMinPolarAngle: (Math.PI * 7) / 16,

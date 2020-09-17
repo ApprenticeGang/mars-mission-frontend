@@ -58,9 +58,7 @@
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!src/index.tsx",
-      "!src/react-app-env.d.ts",
-      "!src/InteractiveMars/Markers.tsx",
-      "!src/InteractiveMars/Mars.js"
+      "!src/react-app-env.d.ts"
     ],
     "coverageThreshold": {
       "global": {
