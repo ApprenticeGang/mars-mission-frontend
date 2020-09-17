@@ -23,3 +23,8 @@ $colorTextBeige: #9D887C;
   font-weight: bold;
 }
 
+@mixin roverPageTitle ($textColour: $colorTextDark) {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 40px;
+  color: $colorTextLight
+}
