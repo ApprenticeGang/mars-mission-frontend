@@ -12,7 +12,9 @@
   ],
   "rules": {
     "@typescript-eslint/array-type": "error",
-    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/explicit-function-return-type": ['on', 
+    {allowTypedFunctionExpressions: true
+    }],
     "@typescript-eslint/member-delimiter-style": "error",
     "@typescript-eslint/method-signature-style": "error",
     "@typescript-eslint/naming-convention": ["error",

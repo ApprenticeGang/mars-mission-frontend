@@ -1,0 +1,121 @@
+@import '../../generalStyle.scss';
+
+
+
+.hamburgerMenu{
+  display: none; 
+  @media(max-width: 930px){
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    width: 100%;
+    background-color:$colorTextDark ; 
+    padding: 20px 40px 0px 0px; 
+  }
+  button{
+    margin-right:40px;
+  }
+}
+.navbar{
+  display: none;
+}
+
+.open{
+  i {
+    background-color: black;
+    display: block;
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 2px;
+    transition:all ease 0.7s;
+
+  }  
+    i:nth-child(1) {
+    transform: rotate(50deg) translateY(16px);
+
+    }
+    i:nth-child(2) {
+      opacity: 0;
+
+    }
+    i:nth-child(3) {
+      transform: rotate(-50deg) translateY(-16px);
+    }
+
+  .navbar{
+    display: block;  
+    background-color: $colorTextDark; 
+    padding: 0px 0px 20px 0px;
+  }
+  .navbarList{
+    padding: 0px;
+    margin: 40px 0px 20px 0px;
+    width: 100vw;
+  }
+  
+  .navbarLi{
+    background-color: $colorTextDark;
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+  
+  .navLink{
+    @include subtitle($textColor: $colorTextLight);
+    padding-right: 35px;
+    display: block;
+    text-decoration: none;
+    
+  
+    &:hover {
+      background-color: $colorTextRed;
+      width: 200px;
+  }
+  }
+ 
+}
+
+
+.BurgerMenu__container{
+  position: absolute;
+  background-color: $colorTextDark;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  
+  padding-right: 40px;
+  
+  i {
+    background-color: $colorTextLight;
+    display: block;
+    width: 2rem;
+    height: 0.25rem;
+    // margin: 4px;
+    border-radius: 2px;
+    transition:all ease 0.7s;
+  }
+
+
+  .close:nth-child(1) {
+    transform: rotate(0) translateY(0);
+  }
+
+  .close:nth-child(2) {
+    opacity: 1;
+  }
+
+  .close:nth-child(3) {
+    transform: rotate(0) translateY(0);
+}
+
+
+}
