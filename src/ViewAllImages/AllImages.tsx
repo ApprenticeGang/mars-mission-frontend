@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styles from './App.module.scss';
 
 
-export function AllImages(){
+export const AllImages:  FunctionComponent = () => {
 
     return (
         <p>View All Images Page</p>

@@ -6,7 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import App from '../App';
+
 import { RoverExplorer } from "./RoverExplorer";
 
 test('renders Rover explorer link', () => {

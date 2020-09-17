@@ -1,4 +1,4 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 import styles from './App.module.scss';
 import {
     BrowserRouter as Router,
@@ -8,10 +8,12 @@ import {
 } from "react-router-dom";
 import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
-import { TimelineID } from "./TimelineID/TimelineID";
 import {AllImages} from "./ViewAllImages/AllImages";
+import {TimelineId} from "./TimelineID/TimelineId";
 
-export default function App() {
+
+
+export const App: FunctionComponent = () => {
     return (
         <Router>
                 <nav>
@@ -41,8 +43,9 @@ export default function App() {
                     <Route exact path="/rover_explorer">
                         <RoverExplorer />
                     </Route>
-                    <Route exact path="/timeline/:id">
-                        {<TimelineID />}
+
+                    <Route path="/timeline/:id">
+                        {<TimelineId />}
                     </Route>
                     <Route exact path="/">
                         <Home />
