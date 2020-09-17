@@ -11,7 +11,8 @@ import "tippy.js/animations/scale.css";
 
 
 //Function to render onHover tooltips
-function markerTooltipRenderer(marker: Marker): string {
+  /* istanbul ignore next */
+export function markerTooltipRenderer(marker: Marker): string {
   return `ROVER: ${marker.rover} `;
 }
 
