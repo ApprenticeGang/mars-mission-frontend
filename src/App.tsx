@@ -9,6 +9,7 @@ import {
 import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
 import { TimelineId } from "./TimelineID/TimelineId";
+import { ImageViewer } from "./ImageViewer/ImageViewer";
 
 export const App: FunctionComponent = () => {
     return (
@@ -37,13 +38,16 @@ export const App: FunctionComponent = () => {
                 </nav>
 
                 <Switch>
-                    <Route path="/rover_explorer">
+                <Route exact path ="/view-all">
+                        <ImageViewer />
+                    </Route>
+                    <Route exact path="/rover_explorer">
                         <RoverExplorer />
                     </Route>
-                    <Route path="/timeline/:id">
+                    <Route exact path="/timeline/:id">
                         {<TimelineId />}
                     </Route>
-                    <Route path="/">
+                    <Route exact path ="/">
                         <Home />
                     </Route>
                 </Switch>
