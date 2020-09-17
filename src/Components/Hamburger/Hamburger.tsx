@@ -6,8 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import OutsideAlerter from "../Body/Body";
-import { Navbar } from "../Nav/Nav"
+
 
 interface HamburgerProps {
     menuOpen: boolean;
