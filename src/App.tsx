@@ -8,7 +8,10 @@ import {
 } from "react-router-dom";
 import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
-import { TimelineId } from "./TimelineID/TimelineId";
+import {AllImages} from "./ViewAllImages/AllImages";
+import {TimelineId} from "./TimelineID/TimelineId";
+
+
 
 export const App: FunctionComponent = () => {
     return (
@@ -33,18 +36,24 @@ export const App: FunctionComponent = () => {
                         <li className={styles.navbarLi}>
                             <Link to="/timeline/perserverance">Perserverance</Link>
                         </li>
-                    </ul>
-                </nav>
+                    </ul> 
+               </nav>
 
                 <Switch>
-                    <Route path="/rover_explorer">
+                    <Route exact path="/rover_explorer">
                         <RoverExplorer />
                     </Route>
+
                     <Route path="/timeline/:id">
                         {<TimelineId />}
                     </Route>
-                    <Route path="/">
+                    <Route exact path="/">
                         <Home />
+                    </Route>
+                    <Route excat path="/view_all">
+                       <AllImages/> 
+
+
                     </Route>
                 </Switch>
         </Router>
