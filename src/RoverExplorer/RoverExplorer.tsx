@@ -1,9 +1,6 @@
 import React, {FunctionComponent} from "react";
 import styles from './RoverExplorer.module.scss';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 
