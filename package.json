@@ -40,7 +40,7 @@
     "test": "react-scripts test --watchAll=false",
     "test:coverage": "react-scripts test --watchAll=false --coverage",
     "test:watch": "react-scripts test --watchAll",
-    "lint": "eslint ./src/**/*.ts ./src/**/*.tsx",
+    "lint": "eslint ./src/**/*.ts ./src/**/*.tsx --max-warnings=0",
     "lint:fix": "eslint --fix ./src/**/*.ts ./src/**/*.tsx"
   },
   "browserslist": {
