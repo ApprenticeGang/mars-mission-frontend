@@ -1,3 +1,8 @@
+
+.roverExplorer {
+    background-color: blue;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
 @import "../generalStyle.scss";
 
@@ -21,15 +26,12 @@
     @include subtitle;
 }
 
-
-
 .Content {
     background: url("/images/rover_explorer_page_background.jpg");
     min-height: 825px;
     background-position: center;
     background-size: cover;
     position: relative;
-
 }
 
 
@@ -110,3 +112,4 @@ a:link {
 a:visited {
     color: $colorTextLight;
 }
+
