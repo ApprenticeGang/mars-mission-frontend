@@ -1,10 +1,8 @@
 import React, { FunctionComponent, useState } from "react";
-import styles from './App.module.scss';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";

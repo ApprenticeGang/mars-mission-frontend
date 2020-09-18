@@ -1,11 +1,6 @@
-import React, { useState, createRef, FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 import styles from './Hamburger.module.scss';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 interface HamburgerProps {
