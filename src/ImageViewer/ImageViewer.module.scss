@@ -1,0 +1,104 @@
+
+.GridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 10%;
+    max-width: 1200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 0;
+    position: relative;
+    align-self: center;
+    margin-top: 0;
+  
+
+}
+.Content {
+    background: url("/images/rover_explorer_page_background.jpg");
+    min-height: 825px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    // background-color: black;
+
+}
+
+.GridImage{
+    max-width:100%;
+    height:auto;
+    grid-column-start: 1; 
+    grid-row-start: 3; 
+    grid-row-end: 5; 
+}
+
+.TopImage{
+    height:auto;
+    width: 100%;
+}
+
+
+.ParentGrid{
+    display: grid;
+    grid-template-areas: 
+    '';
+    grid-gap: 20px;
+    padding: 10%;
+    max-width: 1200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 0;
+    position: relative;
+    align-self: center;
+    border-radius: 3%;
+}
+
+.ParentGrid > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 0%;
+  font-size: 30px;
+}
+
+.SearchBar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:5px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+.Header{
+    position: relative;
+    height: 100px;
+    background-color: #black;
+    margin:auto;
+}
+
+.GridImage{
+    border-radius: 3%;
+    border-color: black;
+    border-style: inset;
+    border-width: 0.1px;
+}
+.TopImage{
+    border-radius: 3%; 
+    border-color: black;
+    border-style: inset;
+    border-width: 0.1px;
+}
+
+.Info{
+    display: none;
+}
+// #631111
