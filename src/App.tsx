@@ -14,7 +14,6 @@ import HamburgerMenu from "./Components/Hamburger/Hamburger";
 import Navbar from "./Components/Nav/Nav";
 
 import {AllImages} from "./ViewAllImages/AllImages";
-import {TimelineId} from "./TimelineID/TimelineId";
 
 
 export const App: FunctionComponent = () => {
