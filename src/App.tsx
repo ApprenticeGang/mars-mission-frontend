@@ -27,7 +27,7 @@ export const App: FunctionComponent = () => {
                 <Route path="/rover_explorer">
                     <RoverExplorer />
                 </Route>
-                <Route path="/timeline/:id">
+                <Route path="/timeline/:roverName">
                     {<TimelineId />}
                 </Route>
                 <Route path="/">
