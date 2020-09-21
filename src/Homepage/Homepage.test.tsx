@@ -6,7 +6,7 @@ import { TimelineId } from "../TimelineID/TimelineId"
 
 
 test('renders HomePage', () => {
-    const { getByText } = render(<App />);
+    const { getByText } = render(<Home />);
     const linkElement = getByText(/Home/);
     expect(linkElement).toBeInTheDocument()
 });
