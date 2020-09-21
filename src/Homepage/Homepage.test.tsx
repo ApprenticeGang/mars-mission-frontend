@@ -10,10 +10,3 @@ test('renders HomePage', () => {
     const linkElement = getByText(/Home/);
     expect(linkElement).toBeInTheDocument()
 });
-
-
-test('renders HomePage', () => {
-    const { getByText } = render(<Home />);
-    const linkElement = getByText(/Home/);
-    expect(linkElement).toBeInTheDocument()
-});
