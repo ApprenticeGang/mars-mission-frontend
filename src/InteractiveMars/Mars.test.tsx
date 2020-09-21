@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Mars, renderToolTipsOnHover } from './Mars';
+import { Mars, markerTooltipRenderer } from './Mars';
 import { Marker } from "react-globe"
 
 test('renders Mars ', () => {
@@ -19,7 +19,7 @@ test('Tooltip returns info', () => {
             value: 35,
         };
     
-    const toolTipText = renderToolTipsOnHover(markers);
+    const toolTipText = markerTooltipRenderer(markers);
     
     expect(toolTipText).toBe("ROVER: Curiosity");
 })
