@@ -3,7 +3,7 @@ import styles from './Nav.module.scss';
 import {Link} from 'react-router-dom';
 
 
-export const Navbar = () => {
+export const Navbar = (): any => {
 
 return  (
 <nav className={styles.navbar}>

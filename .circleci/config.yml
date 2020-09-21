@@ -13,7 +13,6 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run test:coverage
-      - run: npm run lint
       - persist_to_workspace:
           root: .
           paths:

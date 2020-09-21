@@ -1,8 +1,11 @@
+import { Mars } from './InteractiveMars/Mars';
+import styles from './App.module.scss';
 import React, { FunctionComponent, useState } from "react";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
+    Link
 } from "react-router-dom";
 import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
@@ -20,7 +23,7 @@ export const App: FunctionComponent = () => {
         <Router>
             <Navbar />
             <HamburgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-            <div onClick={() => {setMenuOpen(false)}} data-testid= "Clear nav">
+            <div onClick={(): void => {setMenuOpen(false)}} data-testid= "Clear nav">
             <Switch>
                 <Route path="/rover_explorer">
                     <RoverExplorer />
@@ -29,9 +32,10 @@ export const App: FunctionComponent = () => {
                     {<TimelineId />}
                 </Route>
                 <Route path="/">
-                    <Home />
+                    <Link to="/rover_explorer" className= {styles.marsbutton}> ENTER MARS</Link>
+                    <Mars />
                 </Route>
-                <Route excat path="/view_all">
+                    <Route exact path="/view_all">
                        <AllImages/> 
                     </Route>
             </Switch>

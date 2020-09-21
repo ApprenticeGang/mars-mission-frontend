@@ -8,7 +8,7 @@ import {
 import { RoverExplorer } from "./RoverExplorer";
 
 test('renders Rover explorer link', () => {
-    const { getByText } = render(<Router><RoverExplorer /></Router>);
+    const { getByText } = render(<RoverExplorer />);
     const linkElement = getByText(/Rover explorer/i);
     expect(linkElement).toBeInTheDocument();
 });

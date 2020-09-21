@@ -13,7 +13,7 @@ export const HamburgerMenu: FunctionComponent<HamburgerProps> = ({ menuOpen, set
         <button
             data-testid = "Hamburger Button"
             className={styles.BurgerMenu__container}
-        onClick={() => setMenuOpen(!menuOpen)}>
+        onClick={(): void => setMenuOpen(!menuOpen)}>
             <i></i>
             <i></i>
             <i></i>
@@ -44,7 +44,7 @@ const NavLink: FunctionComponent<LinkProps> = ({ setMenuOpen, text, location }) 
 
     return (
         <li className={styles.navbarLi} >
-            <Link to={location} onClick={() => setMenuOpen(false)} className={styles.navLink} data-testid={`${text} Page Link`}>{text}</Link>
+            <Link to={location} onClick={(): void => setMenuOpen(false)} className={styles.navLink} data-testid={`${text} Page Link`}>{text}</Link>
         </li>
     )
 }
