@@ -11,6 +11,7 @@ import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
 import { TimelineId } from "./TimelineID/TimelineId";
 import { ImageViewer } from "./ImageViewer/ImageViewer";
 
+
 export const App: FunctionComponent = () => {
     return (
         <Router>
@@ -47,6 +48,7 @@ export const App: FunctionComponent = () => {
                     <Route exact path="/timeline/:id">
                         {<TimelineId />}
                     </Route>
+                 
                     <Route exact path ="/">
                         <Home />
                     </Route>

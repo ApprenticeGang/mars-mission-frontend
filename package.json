@@ -21,6 +21,8 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-sticky-footer": "0.1.0-rc3",
+    "sticky": "^0.8.0",
     "typescript": "^3.7.5",
     "typescript-plugin-css-modules": "2.4.0"
   },
