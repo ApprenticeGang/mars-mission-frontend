@@ -1,9 +1,58 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 import styles from './NewsArticles.module.scss';
 
+export interface Article {
+    imageUrl?: string | undefined;
+    title: string;
+    articleUrl: string;
+    summary?: string | undefined;
+    publicationDate?: string | undefined;
+}
 
-export const NewsArticle: FunctionComponent = () => {
+interface NewsArticleProps {
+    article: Article;
+}
 
+const fetchNewsArticles = async (): Promise<Article[]> => {
+
+    return Promise.resolve([
+        {
+            imageUrl: "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
+            title: "title",
+            articleUrl: "articleUrl",
+            summary: "summary",
+            publicationDate: "date"
+        }
+    ]);
+}
+
+const NewsArticle: FunctionComponent<NewsArticleProps> = ({article}) => {
+    return (
+        <div className={styles.indivArticle}>
+            
+            <img alt="" src={article.imageUrl} />
+            <div>
+                <h4 className={styles.articleTitle}>{article.title}</h4>
+                <p>{article.summary}</p>
+                <p>{article.publicationDate}</p>
+                <a href={article.articleUrl}>Read now</a>
+            </div>
+        
+        </div>
+    )
+}
+
+export const NewsArticles: FunctionComponent = () => {
+    const [articles, setArticles] = useState<Article[]>([]);
+
+    useEffect(() => {
+        fetchNewsArticles()
+            .then(response => setArticles(response))
+    }, [])
+
+    const articleList = articles.map((article) => {
+        return <NewsArticle article={article} />
+    })
 
     return (
         <section className={styles.newsContainer}>
@@ -15,33 +64,7 @@ export const NewsArticle: FunctionComponent = () => {
                     <button>Twitter</button>
                 </div>
                 <div className={styles.articlesContainer}>
-                    <div className={styles.indivArticle}>
-                        <img alt="" src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FRB_486265257EDR_F0481570FHAZ00323M_.JPG" />
-                        <div>
-                            <h4 className={styles.articleTitle}>Title</h4>
-                            <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <p>12 Oct 2020</p>
-                        </div>
-                        
-                    </div>
-
-                    <div className={styles.indivArticle}>
-                        <img alt="" src="https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/rcam/RLB_486265291EDR_F0481570RHAZ00323M_.JPG" />
-                        <div>
-                            <h4 className={styles.articleTitle}>Title</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <p>12 Oct 2020</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.indivArticle}>
-                        <img alt="" src="https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/rcam/RLB_486265291EDR_F0481570RHAZ00323M_.JPG" />
-                        <div>
-                            <h4 className={styles.articleTitle}>Title</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <p>12 Oct 2020</p>
-                        </div>
-                    </div>
+                    {articleList}
                 </div>
             </div>
         </section>
