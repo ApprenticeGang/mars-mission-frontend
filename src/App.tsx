@@ -40,7 +40,7 @@ export const App: FunctionComponent = () => {
 
                 <Switch>
                 <Route exact path ="/view-all">
-                        <ImageViewer />
+                        {<ImageViewer />}
                     </Route>
                     <Route exact path="/rover_explorer">
                         <RoverExplorer />

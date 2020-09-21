@@ -16,11 +16,6 @@ interface GridItem {
     roverName: string
 }
 
-
-// const getImages: any =(roverName: string) =>{
-//     return Images.filter(image => image.roverName === roverName);
-// }
-
 export const ImageViewer: FunctionComponent = () => {
 
     const [search, setSearch] = useState("");
@@ -29,40 +24,35 @@ export const ImageViewer: FunctionComponent = () => {
 
 
     interface Results {
-    id: number,
-    sol: number,
-    cameraName: string,
-    cameraFullName: string,
-    imageUrl: string,
-    earthDate: string,
-    roverName: string 
+        id: number,
+        sol: number,
+        cameraName: string,
+        cameraFullName: string,
+        imageUrl: string,
+        earthDate: string,
+        roverName: string
     }
-
-    // useEffect(() => {
-    //     getImages(search)
-    //         .then(results  => setGridItems(results));
-    // }, [search]);
-
     useEffect(() => {
         setMode("Loading")
         setGridItems(Images)
         setMode('Ready')
     }, [search])
 
-
     return (
         <div >
-                <header className={styles.Header}>
-                   
-                    {/* <input className={styles.SearchBar} type="text" value={search} onChange={(event) => { setSearch(event.target.value) }} ></input> */}
-                   
+            <div className="container">
+                <header className={styles.Header}> 
+                <h3 className={styles.headerText}>Image Explorer</h3>
                 </header>
+            </div>
+             {mode === 'Ready' && <SearchResults gridItems={gridItems}></SearchResults>}
+            {mode === 'Loading' && <p>Loading</p>} 
+            <footer className={styles.Footer}>
+                <div className={styles.imageParent}>
+                    <a href="#top" className={styles.image}  aria-label="Scroll to Top"></a>
+                    </div>
 
-                {mode === 'Ready' && <SearchResults gridItems={gridItems}></SearchResults>}
-                {mode === 'Loading' && <p>Loading</p>}
-
-                <footer className={styles.Footer}></footer>
-       
+            </footer>
         </div>
     );
 }
@@ -79,9 +69,9 @@ interface GridItemProps {
 
 const Item = (props: GridItemProps) => {
     return (
-    
+
         <section>
-            <Link to ={`/image/${props.id}`}></Link>
+            {/* <Link to={`/image/${props.id}`}></Link> */}
             <div className={styles.GridItem}>
                 <div className={styles.Info}>{props.id}, {props.sol}, {props.cameraName}, {props.cameraFullName}, {props.earthDate}, {props.roverName}</div>
                 <img className={styles.GridImage} src={props.imageUrl}></img>
@@ -103,12 +93,6 @@ const SearchResults = (props: SearchResultProps) => {
     const gridItemList = props.gridItems.map((gridItem: GridItemProps) => {
         return <Item id={gridItem.id} sol={gridItem.sol} cameraName={gridItem.cameraName} cameraFullName={gridItem.cameraFullName} imageUrl={gridItem.imageUrl} earthDate={gridItem.earthDate} roverName={gridItem.roverName}></Item>
     })
-
-    if (props.gridItems.length === 0) {
-        return (
-            <p> No Results</p>
-        )
-    }
     return (
 
         <div className={styles.Content}>
@@ -119,10 +103,10 @@ const SearchResults = (props: SearchResultProps) => {
                 <div className={styles.GridContainer}>
                     {gridItemList}
                 </div>
-             
+
             </div>
         </div>
-   
+
 
 
 
