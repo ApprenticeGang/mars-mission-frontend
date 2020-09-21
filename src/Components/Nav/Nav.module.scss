@@ -1,0 +1,33 @@
+@import '../../generalStyle.scss';
+
+.navbarUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $colorTextDark;
+  }
+  
+  .navbarLi {
+    
+    display: inline-block;
+    transition: 1s;
+  
+    &:hover {
+      background-color: $colorTextRed;
+  }
+  }
+  
+  .navbarLi a {
+    @include subtitle($textColor: $colorTextLight);
+    display: block;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+  }
+
+  @media (max-width: 980px) {
+    .navbar {
+      display: none;
+    }
+  }
