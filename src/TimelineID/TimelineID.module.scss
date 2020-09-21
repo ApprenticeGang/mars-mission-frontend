@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+@import "../generalStyle.scss";
+
+
 .timelineID {
     background-color: yellowgreen;
+}
+
+.rt-timeline-container {
+    background-color: red;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }

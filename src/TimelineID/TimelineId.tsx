@@ -15,37 +15,38 @@ interface Rover {
 }
 export const TimelineId: FunctionComponent = () => {
 
-    // const events = [
-    //     {
-    //         date: new Date(2013, 9, 27),
-    //         text: "Sed leo elit, pellentesque sit amet congue quis, ornare nec lorem.",
-    //         title: "Cairo, Egypt",
-    //         buttonText: 'Click Me',
-    //         imageUrl: "http://github.com/aaron9000/react-image-timeline/blob/master/src/assets/cairo.jpg?raw=true",
-    //         onClick: console.log,
-    //     }
-    // ];
-
-    // return <Timeline events={events} />
     const { roverName }: any = useParams();
-    const rover: Rover  = getRover(roverName)!;
-    
+    const rover: Rover = getRover(roverName)!;
+    const events = [
+        {
+            date: new Date(2013, 9, 27),
+            text: `${rover.information}`,
+            title: `${rover.name}`,
+            buttonText: 'Click Me',
+            imageUrl: `${rover.imageUrl}`,
+            onClick: console.log,
+        }
+    ];
+
     return (
+
         <div className={styles.timelineID}>
             <h3>The current Timeline Id is: {roverName} </h3>
-            <RoverImage name = {rover.name} information = {rover.information} imageUrl = {rover.imageUrl}/>
+            <RoverImage name={rover.name} information={rover.information} imageUrl={rover.imageUrl} />
+            <Timeline events={events} />
         </div>
-    );
-}
+    )
+};
 export function getRover(roverName: String): Rover | undefined {
     console.log(roverName);
     return rovers.find(rover => rover.name.toLowerCase() === roverName.toLowerCase())
-    
+
 };
 
 export const RoverImage: FunctionComponent<Rover> = (getRover) => {
     return (
         <section>
+
             <h2>{getRover.name}</h2>
             <h3>{getRover.information}</h3>
             <img src={getRover.imageUrl} />
