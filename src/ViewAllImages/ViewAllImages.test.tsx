@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { AllImages } from './AllImages';
 
-import { RoverExplorer } from "./RoverExplorer";
 
 test('renders Rover explorer link', () => {
-    const { getByText } = render(<RoverExplorer />);
-    const linkElement = getByText(/Rover explorer/i);
+    const { getByText } = render(<AllImages />);
+    const linkElement = getByText(/View All Images Page/i);
     expect(linkElement).toBeInTheDocument();
 });

@@ -20,6 +20,8 @@
         { selector: "variable", types: ["function"], format: [ "strictCamelCase", "StrictPascalCase" ] },
         { selector: "function", format: [ "strictCamelCase", "StrictPascalCase"] },
         { selector: "typeLike", format: [ "StrictPascalCase"] },
-    ]
+    ],
+
+  
   }
 }
