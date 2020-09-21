@@ -7,7 +7,6 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
 import { TimelineId } from "./TimelineID/TimelineId";
 import HamburgerMenu from "./Components/Hamburger/Hamburger";

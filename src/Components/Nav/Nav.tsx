@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Nav.module.scss';
 import {Link} from 'react-router-dom';
 
-
+/* eslint-disable-next-line */
 export const Navbar = (): any => {
 
 return  (
