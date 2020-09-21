@@ -1,74 +1,109 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import styles from './TimelineID.module.scss';
-// import {roverCurisity, roverOpportunity, roverPerservance, roverSpirt} from './RoverInformation' 
-import { RoverExplorer } from "../RoverExplorer/RoverExplorer";
-import { useParams } from "react-router-dom";
-import ReactDOM from 'react-dom';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import { useParams, Link } from "react-router-dom";
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
- 
+
 interface Rover {
     name: string;
     information: string;
     imageUrl: string;
+
 }
 export const TimelineId: FunctionComponent = () => {
 
-    const { roverName }: any = useParams();
+    const { roverName }:any = useParams();
     const rover: Rover = getRover(roverName)!;
-
     return (
-    <VerticalTimeline>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        contentStyle={{ background: '#631111', color: '#fff' }}
-        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-        date="2011 - present"
-        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-        // icon={<WorkIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">{rover.name}</h3>
-        <h4 className="vertical-timeline-element-subtitle">{rover.information}</h4>
-        <img className="rover-image" src={rover.imageUrl} />
-        <p>
-            {rover.information}
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date="2010 - 2011"
-        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-        // icon={<WorkIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">Art Director</h3>
-        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date="2008 - 2010"
-        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-        // icon={<WorkIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-        <p>
-          User Experience, Visual Design
-        </p>
-      </VerticalTimelineElement>
-    </VerticalTimeline>
-    )
-    
-    // return(
-    //     <div className={styles.timelineID}>
-    //         {/* <h3>The current Timeline Id is: {roverName} </h3>
-    //         <RoverImage name={rover.name} information={rover.information} imageUrl={rover.imageUrl} /> */}
-    //         <Timeline events={events} />
-    //     </div>
-    // )
+        <section className={styles.BackgroundColor}>
+            <VerticalTimeline>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{ background: '#631111', color: '#fff' }}
+                    contentArrowStyle={{ borderRight: '7px solid  #631111' }}
+                    date="2011 - present"
+                    iconStyle={{ background: '#631111', color: '#631111' }}
+                    // icon={<Icon />}
+                >
+                    <h3 className="vertical-timeline-element-title">{rover.name}</h3>
+                    <img className="rover-image" src={rover.imageUrl} />
+                    <p>
+                        {rover.information}
+                    </p>
+                </VerticalTimelineElement>
 
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    date="2010 - 2011"
+                    contentStyle={{ background: '#631111', color: '#fff' }}
+                    contentArrowStyle={{ borderRight: '7px solid  #631111' }}
+                    iconStyle={{ background: '#631111', color: '#fff' }}
+                >
+                    <h3 className="vertical-timeline-element-title">{rover.name}</h3>
+                    <img className="rover-image" src={rover.imageUrl} />
+                    <p>
+                        {rover.information}
+                    </p>
+                </VerticalTimelineElement>
+
+
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    date="April 2013"
+                    contentStyle={{ background: '#631111', color: '#fff' }}
+                    contentArrowStyle={{ borderRight: '7px solid  #631111' }}
+                    iconStyle={{ background: '#631111', color: '#631111' }}
+                >
+                    <h3 className="vertical-timeline-element-title">{rover.name}</h3>
+                    <img className="rover-image" src={rover.imageUrl} />
+                    <p>
+                        {rover.information}
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    date="November 2012"
+                    contentStyle={{ background: '#631111', color: '#fff' }}
+
+                    contentArrowStyle={{ borderRight: '7px solid  #631111' }}
+                    iconStyle={{ background: '#631111', color: '#631111' }}
+                >
+                    <h3 className="vertical-timeline-element-title">{rover.name}</h3>
+                    <img className="rover-image" src={rover.imageUrl} />
+                    <p>
+                        {rover.information}
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    date="2002 - 2006"
+                    contentStyle={{ background: '#631111', color: '#fff' }}
+                    contentArrowStyle={{ borderRight: '7px solid  #631111' }}
+                    iconStyle={{ background: '#631111', color: '#631111' }}
+                >
+                    <h3 className="vertical-timeline-element-title">{rover.name}</h3>
+                    <img className="rover-image" src={rover.imageUrl} />
+                    <p>
+                        {rover.information}
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    date="2010 - 2011"
+                    contentStyle={{ background: '#631111', color: '#fff' }}
+                    contentArrowStyle={{ borderRight: '7px solid  #631111' }}
+                    iconStyle={{ background: '#631111', color: '#631111' }}
+                >
+                    <h3 className="vertical-timeline-element-title">{rover.information}</h3>
+                    <h4 className="vertical-timeline-element-subtitle">{rover.information}</h4>
+                    <p>
+                        {rover.information}
+                    </p>
+                </VerticalTimelineElement>
+            </VerticalTimeline>
+            <Link to="/view_all" className={styles.ButtonToRoverImage}>{rover.name} Image explorer</Link>
+        </section>
+    )
 };
 export function getRover(roverName: String): Rover | undefined {
     console.log(roverName);
@@ -95,4 +130,8 @@ const rovers: Rover[] = [
 ]
 
 
-
+// export const Icon: FunctionComponent<any> = () => {
+//     return (
+//        <img src="/images/NasaLogo.png"/>
+//     )
+// };
