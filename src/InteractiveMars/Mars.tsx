@@ -12,7 +12,6 @@ import "tippy.js/animations/scale.css";
 //Renders tooltips on hover (changing function name breaks tooltips!)
 
 export function markerTooltipRenderer(marker: Marker): string {
-  {console.log("Function called")}
   return `ROVER: ${marker.rover}`;
 }
 
