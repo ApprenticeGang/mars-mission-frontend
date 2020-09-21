@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import styles from './Nav.module.scss';
 import {Link} from 'react-router-dom';
 
-
-export const Navbar = (): any => {
+export const Navbar: FunctionComponent = () => {
 
 return  (
 <nav className={styles.navbar}>
