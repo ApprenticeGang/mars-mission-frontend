@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import styles from './Nav.module.scss';
 import {Link} from 'react-router-dom';
 
-/* eslint-disable-next-line */
 export const Navbar: FunctionComponent = () => {
 
 return  (
