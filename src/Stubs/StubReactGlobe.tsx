@@ -1,4 +1,4 @@
-﻿import React, {FunctionComponent} from "react";
+import React, {FunctionComponent} from "react";
 
 // So this is a GIANT PAIN!
 // 
@@ -19,6 +19,7 @@
 // Its obviously not very functional... but that's fine for tests - after all we don't need to a third party library.
 // This mocking is done in package.json in the moduleNameMapper section of the jest config.
 
+/* eslint-disable */
 const ReactGlobe: FunctionComponent<any> = () => {
     return <div>Stub Globe!</div>;
 };
@@ -26,6 +27,7 @@ const ReactGlobe: FunctionComponent<any> = () => {
 export interface Marker {
     [key: string]: any;
     coordinates: [number, number];
+    rover: string;
     id: string;
     value: number;
     color?: string;
