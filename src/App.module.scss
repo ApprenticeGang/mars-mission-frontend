@@ -24,6 +24,9 @@
 }
 
 .navbarUl {
+  li:nth-child(3) {
+    margin-top: 0px;
+  }
   list-style-type: none;
   margin: 0;
   padding: 0;
