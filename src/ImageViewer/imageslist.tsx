@@ -1,14 +1,14 @@
 export interface Api {
-    id: number,
-    sol: number,
-    cameraName: string,
-    cameraFullName: string,
-    imageUrl: string,
-    earthDate: string,
-    roverName: string
+    id: number;
+    sol: number;
+    cameraName: string;
+    cameraFullName: string;
+    imageUrl: string;
+    earthDate: string;
+    roverName: string;
 }
 
-export const Images: Api[] = [{"id":102693,"sol":1000,"cameraName": "FHAZ","cameraFullName":"Front Hazard Avoidance Camera", "imageUrl":"http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG","earthDate":"2015-05-30", "roverName":"Curiosity"},
+export const images: Api[] = [{"id":102693,"sol":1000,"cameraName": "FHAZ","cameraFullName":"Front Hazard Avoidance Camera", "imageUrl":"http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG","earthDate":"2015-05-30", "roverName":"Curiosity"},
 {"id":102850,"sol":1002,"cameraName":"RHAZ","cameraFullName":"Rear Hazard Avoidance Camera","imageUrl":"http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/rcam/RLB_486265291EDR_F0481570RHAZ00323M_.JPG","earthDate":"2015-06-29","roverName":"Opportunity"},
 {"id":102851,"sol":1001,"cameraName":"RHAZ","cameraFullName":"Middle Hazard Avoidance Camera","imageUrl":"http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/rcam/RLB_486265291EDR_F0481570RHAZ00323M_.JPG","earthDate":"2016-04-15","roverName":"Spirit"},
 {"id":102853,"sol":1011,"cameraName":"RHAZ","cameraFullName":"Left Hazard Avoidance Camera","imageUrl":"http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/rcam/RLB_486265291EDR_F0481570RHAZ00323M_.JPG","earthDate":"2016-03-16","roverName":"Perseverance"},{"id":102693,"sol":1000,"cameraName": "FHAZ","cameraFullName":"Front Hazard Avoidance Camera", "imageUrl":"http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG","earthDate":"2015-05-30", "roverName":"Curiosity"},
