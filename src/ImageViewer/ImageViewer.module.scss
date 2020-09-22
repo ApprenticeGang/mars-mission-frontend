@@ -45,14 +45,7 @@
 .Header {
     background: $colorTextDark;
     height: 100px;
-    position: -webkit-sticky;
     position: sticky;
-    // top: 0;
-    // z-index: 2;
-    // overflow: auto;
-    // flex-shrink: 0;
-    // align-self: flex-end;
-    // overflow: hide;
     @include title;
     text-align: center;
     vertical-align: middle;

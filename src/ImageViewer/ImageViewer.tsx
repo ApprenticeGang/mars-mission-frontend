@@ -15,15 +15,13 @@ interface GridItem {
 
 export const ImageViewer: FunctionComponent = () => {
 
-    const [search] = useState("");
+    
     const [gridItems, setGridItems] = useState<GridItem[]>(images)
-    const [mode, setMode] = useState('Loading');
+   
 
     useEffect(() => {
-        setMode("Loading")
         setGridItems(images)
-        setMode('Ready')
-    }, [search]);
+    }, []);
 
     return (
         <div >
@@ -32,8 +30,7 @@ export const ImageViewer: FunctionComponent = () => {
                 <h3 className={styles.headerText}>Image Explorer</h3>
                 </header>
             </div>
-             {mode === 'Ready' && <SearchResults gridItems={gridItems}></SearchResults>}
-            {mode === 'Loading' && <p>Loading</p>} 
+              <SearchResults gridItems={gridItems}></SearchResults>
             <footer className={styles.Footer}>
                 <div className={styles.imageParent}>
                     <a href="#top" className={styles.image}  aria-label="Scroll to Top" ></a>
@@ -56,7 +53,6 @@ interface GridItemProps {
 const Item:FunctionComponent<GridItemProps> =  (props: GridItemProps) => {
     return (
         <section>
-            {/* <Link to={`/image/${props.id}`}></Link> */}
             <div className={styles.GridItem}>
                 <div className={styles.Info}>{props.id}, {props.sol}, {props.cameraName}, {props.cameraFullName}, {props.earthDate}, {props.roverName}</div>
                 <img className={styles.GridImage} src={props.imageUrl}></img>
@@ -72,15 +68,15 @@ interface SearchResultProps {
 
 const SearchResults: FunctionComponent<SearchResultProps> = (props: SearchResultProps) => {
 
-    const photos = images[Math.floor(Math.random() * images.length)];
-    const [image, setImage] = useState(`${photos.imageUrl}`);
+    const photo = images[Math.floor(Math.random() * images.length)];
+    const [image, setImage] = useState(`${photo.imageUrl}`);
 
     const gridItemList = props.gridItems.map((gridItem: GridItemProps) => {
         return <Item id={gridItem.id} sol={gridItem.sol} cameraName={gridItem.cameraName} cameraFullName={gridItem.cameraFullName} imageUrl={gridItem.imageUrl} earthDate={gridItem.earthDate} roverName={gridItem.roverName}></Item>
     })
     return (
 
-        <div className={styles.Content}>
+        
             <div className={styles.ParentGrid}>
                 <div className={styles.BigImage}>
                     <img className={styles.TopImage} src={image} />
@@ -90,7 +86,7 @@ const SearchResults: FunctionComponent<SearchResultProps> = (props: SearchResult
                 </div>
 
             </div>
-        </div>
+      
     )
 
 
