@@ -1,16 +1,45 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { App } from './App';
+import HamburgerMenu from './Components/Hamburger/Hamburger';
 
 
 test('renders Rover explorer link', () => {
-    const { getByText } = render(<App />);
-    const linkElement = getByText(/Rover explorer/i);
-    expect(linkElement).toBeInTheDocument();
+    const { getAllByText } = render(<App />);
+    const linkElements  = getAllByText(/Rover explorer/i);
+    expect(linkElements.length).toBe(2);
 });
 
 test('renders Opportunity link', () => {
-    const { getByText } = render(<App />);
-    const linkElement = getByText(/Opportunity/i);
-    expect(linkElement).toBeInTheDocument();
+    const { getAllByText} = render(<App />);
+    const linkElements = getAllByText(/Opportunity/i);
+    expect(linkElements.length).toBe(2);
 });
+
+test('The burger menu doesnt contain open inititally. When clicked it does contain open. When you click a link it removes open', () =>{
+    const {getByTestId} = render(<App />)
+    const container = getByTestId("Hamburger Container");
+    expect(container.className).not.toContain("open"); 
+    const button = getByTestId("Hamburger Button");
+    fireEvent.click(button);
+    expect(container.className).toContain("open");
+    const homeLink = getByTestId("Home Page Link");
+    fireEvent.click(homeLink);
+    expect(container.className).not.toContain("open");  
+})
+
+test('No open class when clicked outside of hamburger container', () =>{
+    const {getByTestId} = render(<App />)
+    const container = getByTestId("Hamburger Container");
+    const body = getByTestId("Hamburger Button");
+    expect(container.className).not.toContain("open");
+    fireEvent.click(body);
+    expect(container.className).toContain("open");
+    const bodyClick = getByTestId("Clear nav");
+    fireEvent.click(bodyClick);
+    expect(container.className).not.toContain("open");  
+
+})
+
+
+

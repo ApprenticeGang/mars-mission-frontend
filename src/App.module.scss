@@ -34,10 +34,9 @@
 .navbarLi {
   display: inline-block;
   transition: 2s;
-
   &:hover {
     background-color: red;
-}
+  }
 }
 
 .navbarLi a {

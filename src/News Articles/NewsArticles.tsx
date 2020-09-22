@@ -20,7 +20,7 @@ const fetchNewsArticles = async (): Promise<Article[]> => {
             imageUrl: "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
             title: "title",
             articleUrl: "articleUrl",
-            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
             publicationDate: "12 Oct 2020"
         }
     ]);

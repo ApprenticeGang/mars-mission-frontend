@@ -1,52 +1,41 @@
-import React, {FunctionComponent} from "react";
-import styles from './App.module.scss';
+import React, { FunctionComponent, useState } from "react";
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
-import { Home } from "./Homepage/Homepage";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
 import { TimelineId } from "./TimelineID/TimelineId";
+import HamburgerMenu from "./Components/Hamburger/Hamburger";
+import Navbar from "./Components/Nav/Nav";
+import {AllImages} from "./ViewAllImages/AllImages";
+import { Home } from './Homepage/Homepage';
+
 
 export const App: FunctionComponent = () => {
-    return (
-        <Router>
-                <nav>
-                    <ul className={styles.navbarUl}>
-                        <li className={styles.navbarLi}>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li className={styles.navbarLi}>
-                            <Link to="/rover_explorer">Rover explorer</Link>
-                        </li>
-                        <li className={styles.navbarLi}>
-                            <Link to="/timeline/opportunity">Opportunity</Link>
-                        </li>
-                        <li className={styles.navbarLi}>
-                            <Link to="/timeline/spirit">Spirit</Link>
-                        </li>
-                        <li className={styles.navbarLi}>
-                            <Link to="/timeline/curiosity">Curiosity</Link>
-                        </li>
-                        <li className={styles.navbarLi}>
-                            <Link to="/timeline/perserverance">Perserverance</Link>
-                        </li>
-                    </ul>
-                </nav>
+    const [menuOpen, setMenuOpen] = useState(false);
 
-                <Switch>
-                    <Route path="/rover_explorer">
-                        <RoverExplorer />
-                    </Route>
-                    <Route path="/timeline/:id">
-                        {<TimelineId />}
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
-                </Switch>
+    return (
+        
+        <Router>
+            <Navbar />
+            <HamburgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+            <div onClick={(): void => {setMenuOpen(false)}} data-testid= "Clear nav">
+            <Switch>
+                <Route path="/rover_explorer">
+                    <RoverExplorer />
+                </Route>
+                <Route path="/timeline/:id">
+                    {<TimelineId />}
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
+                <Route exact path="/view_all">
+                    <AllImages/> 
+                </Route>
+            </Switch>
+            </div> 
         </Router>
     );
 }
