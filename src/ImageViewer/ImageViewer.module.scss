@@ -45,20 +45,19 @@
 .Header {
     background: $colorTextDark;
     height: 100px;
-    position: sticky;
     @include title;
     text-align: center;
-    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+
 
 }
 
 .headerText {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    line-height: 100px;
     width: 100%;
     height: 100%;
+    margin: 0;
 
 }
 
@@ -94,31 +93,22 @@
 
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
+.Image {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $colorTextLight;
+    padding: 0.25rem;
+    color: $colorTextDark;
+    background: url(/images/back_to_top.png);
+    height: 100%;
+    width: 100%;
+    transform: translate(-10%, -10%);
+}
 
-    html,
-    body {
-        scroll-behavior: smooth;
-    }
-
-
-    .image {
-        display: inline-block;
-        text-decoration: none;
-        background-color: $colorTextLight;
-        padding: 0.25rem;
-        color: $colorTextDark;
-        background: url(/images/back_to_top.png);
-        height: 100%;
-        width: 100%;
-        transform: translate(-10%, -10%);
-    }
-
-    .imageParent {
-        display: inline-block;
-        height: 22px;
-        width: 22px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.ImageParent {
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -15,9 +15,9 @@ interface GridItem {
 
 export const ImageViewer: FunctionComponent = () => {
 
-    
+
     const [gridItems, setGridItems] = useState<GridItem[]>(images)
-   
+
 
     useEffect(() => {
         setGridItems(images)
@@ -25,16 +25,14 @@ export const ImageViewer: FunctionComponent = () => {
 
     return (
         <div >
-            <div className="container">
-                <header className={styles.Header}> 
+            <header className={styles.Header}>
                 <h3 className={styles.headerText}>Image Explorer</h3>
-                </header>
-            </div>
-              <SearchResults gridItems={gridItems}></SearchResults>
+            </header>
+            <SearchResults gridItems={gridItems}></SearchResults>
             <footer className={styles.Footer}>
-                <div className={styles.imageParent}>
-                    <a href="#top" className={styles.image}  aria-label="Scroll to Top" ></a>
-                    </div>
+                <div className={styles.ImageParent}>
+                    <a href="#top" className={styles.Image} aria-label="Scroll to Top" ></a>
+                </div>
 
             </footer>
         </div>
@@ -50,7 +48,7 @@ interface GridItemProps {
     earthDate: string;
     roverName: string;
 }
-const Item:FunctionComponent<GridItemProps> =  (props: GridItemProps) => {
+const Item: FunctionComponent<GridItemProps> = (props: GridItemProps) => {
     return (
         <section>
             <div className={styles.GridItem}>
@@ -76,17 +74,17 @@ const SearchResults: FunctionComponent<SearchResultProps> = (props: SearchResult
     })
     return (
 
-        
-            <div className={styles.ParentGrid}>
-                <div className={styles.BigImage}>
-                    <img className={styles.TopImage} src={image} />
-                </div >
-                <div className={styles.GridContainer}>
-                    {gridItemList}
-                </div>
 
+        <div className={styles.ParentGrid}>
+            <div className={styles.BigImage}>
+                <img className={styles.TopImage} src={image} />
+            </div >
+            <div className={styles.GridContainer}>
+                {gridItemList}
             </div>
-      
+
+        </div>
+
     )
 
 
