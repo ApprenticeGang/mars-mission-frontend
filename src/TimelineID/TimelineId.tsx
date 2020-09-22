@@ -68,8 +68,6 @@ const getRover = (roverName: string | undefined): Rover | undefined => {
     
 } 
 
-
-
 const rovers: Rover[] = [
     { name: "Spirit", information: "Rover 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", imageUrl: "/images/spirit_timeline.png" },
     { name: "Opportunity", information: "Rover on mars 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  imageUrl: "/images/opportunity_timeline.png" },

@@ -14,4 +14,3 @@ test('renders Rover explorer link', () => {
     const linkElement = getByText(/Rover explorer/i);
     expect(linkElement).toBeInTheDocument();
 });
-
