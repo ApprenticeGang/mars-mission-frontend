@@ -19,7 +19,7 @@ export const TimelineId: FunctionComponent = () => {
     const params: RoverName = useParams();
     const rover = getRover(params.roverName);
     if (!rover) {
-        return <div>Unable to find a rover with that name</div>
+        return <div>Unable to find rover with name: {params.roverName}</div>
     }
     return (
         <section className={styles.BackgroundColor}>
@@ -68,16 +68,7 @@ const getRover = (roverName: string | undefined): Rover | undefined => {
     
 } 
 
-export const RoverImage: FunctionComponent<Rover> = (getRover) => {
-    return (
-        
-        <section>
-            <h2>{getRover.name}</h2>
-            <h3>{getRover.information}</h3>
-            <img src={getRover.imageUrl} alt="rover" />
-        </section>
-    )
-};
+
 
 const rovers: Rover[] = [
     { name: "Spirit", information: "Rover 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", imageUrl: "/images/spirit_timeline.png" },

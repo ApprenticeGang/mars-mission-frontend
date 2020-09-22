@@ -16,7 +16,3 @@ test('renders Rover Timeline', () => {
     expect(timelineElements).toHaveLength(4);
 });
 
-
-
-
-
