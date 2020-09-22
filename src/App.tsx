@@ -28,7 +28,7 @@ export const App: FunctionComponent = () => {
                     <RoverExplorer />
                 </Route>
                 <Route path="/timeline/:roverName">
-                    {<TimelineId />}
+                    <TimelineId />
                 </Route>
                 <Route path="/">
                     <Link to="/rover_explorer" className= {styles.marsbutton}> ENTER MARS</Link>
