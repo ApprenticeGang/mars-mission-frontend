@@ -1,21 +1,19 @@
-import { Mars } from './InteractiveMars/Mars';
-import styles from './App.module.scss';
 import React, { FunctionComponent, useState } from "react";
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
 import { TimelineId } from "./TimelineID/TimelineId";
 import HamburgerMenu from "./Components/Hamburger/Hamburger";
 import Navbar from "./Components/Nav/Nav";
 import {AllImages} from "./ViewAllImages/AllImages";
+import { Home } from './Homepage/Homepage';
 
 
 export const App: FunctionComponent = () => {
- const [menuOpen, setMenuOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     return (
         
@@ -31,12 +29,11 @@ export const App: FunctionComponent = () => {
                     {<TimelineId />}
                 </Route>
                 <Route path="/">
-                    <Link to="/rover_explorer" className= {styles.marsbutton}> ENTER MARS</Link>
-                    <Mars />
+                    <Home />
                 </Route>
-                    <Route exact path="/view_all">
-                       <AllImages/> 
-                    </Route>
+                <Route exact path="/view_all">
+                    <AllImages/> 
+                </Route>
             </Switch>
             </div> 
         </Router>

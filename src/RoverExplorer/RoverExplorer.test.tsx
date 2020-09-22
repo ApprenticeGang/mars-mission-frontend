@@ -1,10 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    BrowserRouter as Router
 } from "react-router-dom";
 
 import { RoverExplorer } from "./RoverExplorer";
