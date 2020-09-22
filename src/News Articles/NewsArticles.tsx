@@ -47,7 +47,7 @@ export const NewsArticles: FunctionComponent = () => {
     useEffect(() => {
         fetchNewsArticles()
             .then(response => setArticles(response))
-    }, [])
+    }, []);
 
     const articleList = articles.map((article) => {
         return <NewsArticle article={article} />
