@@ -20,8 +20,8 @@ const fetchNewsArticles = async (): Promise<Article[]> => {
             imageUrl: "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
             title: "title",
             articleUrl: "articleUrl",
-            summary: "summary",
-            publicationDate: "date"
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            publicationDate: "12 Oct 2020"
         }
     ]);
 }
@@ -29,13 +29,12 @@ const fetchNewsArticles = async (): Promise<Article[]> => {
 const NewsArticle: FunctionComponent<NewsArticleProps> = ({article}) => {
     return (
         <div className={styles.indivArticle}>
-            
-            <img alt="" src={article.imageUrl} />
-            <div>
+            <img className={styles.articleImg} alt="" src={article.imageUrl} />
+            <div className={styles.articleInfo}>
                 <h4 className={styles.articleTitle}>{article.title}</h4>
-                <p>{article.summary}</p>
-                <p>{article.publicationDate}</p>
-                <a href={article.articleUrl}>Read now</a>
+                <p className={styles.summary}>{article.summary}</p>
+                <p className={styles.publicationDate}>{article.publicationDate}</p>
+                <a className={styles.articleLink} href={article.articleUrl}>Read now</a>
             </div>
         
         </div>
@@ -58,10 +57,10 @@ export const NewsArticles: FunctionComponent = () => {
         <section className={styles.newsContainer}>
             <h2 className={styles.title}>News</h2>
             <img className={styles.mainArticleImg} alt="" src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG" />
-            <div>
+            <div className={styles.articlesWrapper}>
                 <div className={styles.buttonContainer}>
-                    <button>News</button>
-                    <button>Twitter</button>
+                    <button className={styles.btn}>News</button>
+                    <button className={styles.btn}>Twitter</button>
                 </div>
                 <div className={styles.articlesContainer}>
                     {articleList}
