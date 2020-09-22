@@ -13,36 +13,37 @@
     position: relative;
     align-self: center;
     margin-top: 0;
-  
+
 
 }
 
-.GridImage{
-    max-width:100%;
-    height:auto;
-    grid-column-start: 1; 
-    grid-row-start: 3; 
-    grid-row-end: 5; 
+.GridImage {
+    max-width: 100%;
+    height: auto;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-row-end: 5;
 }
 
-.TopImage{
-    height:auto;
+.TopImage {
+    height: auto;
     width: 100%;
 }
 
 
-.ParentGrid{
+.ParentGrid {
     display: grid;
     grid-gap: 20px;
     padding: 5%;
 }
 
-.ParentGrid > div {
-  padding: 0%;
-  font-size: 30px;
+.ParentGrid>div {
+    padding: 0%;
+    font-size: 30px;
 }
-.Header{
-    background:black;
+
+.Header {
+    background: $colorTextDark;
     height: 100px;
     position: -webkit-sticky;
     position: sticky;
@@ -55,9 +56,10 @@
     @include title;
     text-align: center;
     vertical-align: middle;
-   
+
 }
-.headerText{
+
+.headerText {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -67,57 +69,63 @@
 
 }
 
-.GridImage{
+.GridImage {
     border-radius: 3%;
-    border-color: white;
-    border-style: inset;
-    border-width: 0.1px;
-}
-.TopImage{
-    border-radius: 3%; 
-    border-color: white;
+    border-color: $colorTextLight;
     border-style: inset;
     border-width: 0.1px;
 }
 
-.Info{
+.TopImage {
+    border-radius: 3%;
+    border-color: $colorTextLight;
+    border-style: inset;
+    border-width: 0.1px;
+}
+
+.Info {
     display: none;
 }
-.Footer{
-    background-color: white;
-    height: 65px;
+
+.Footer {
+    background-color: $colorTextLight;
+    height: 40px;
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
     display: flex;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
+
     html,
     body {
-      scroll-behavior: smooth;
+        scroll-behavior: smooth;
     }
 
 
     .image {
         display: inline-block;
         text-decoration: none;
-        background-color: #D6E3F0;
+        background-color: $colorTextLight;
         padding: 0.25rem;
-        color: black;
-        background: url(https://i.ibb.co/5FQppTT/img-549039.png);
+        color: $colorTextDark;
+        background: url(/images/back_to_top.png);
         height: 100%;
         width: 100%;
+        transform: translate(-10%, -10%);
     }
 
-      .imageParent{
+    .imageParent {
         display: inline-block;
-          height: 42px;
-          width: 42px;
-          margin-left: auto;
-          margin-right: auto;
-
-      }
-  }
+        height: 22px;
+        width: 22px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

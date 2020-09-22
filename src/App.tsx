@@ -12,6 +12,7 @@ import { TimelineId } from "./TimelineID/TimelineId";
 import { ImageViewer } from "./ImageViewer/ImageViewer";
 import HamburgerMenu from "./Components/Hamburger/Hamburger";
 import Navbar from "./Components/Nav/Nav";
+import { Home } from './Homepage/Homepage';
 
 
 export const App: FunctionComponent = () => {
@@ -42,7 +43,6 @@ export const App: FunctionComponent = () => {
                         </li>
                     </ul>
                 </nav>
-
                 <Switch>
                 <Route exact path ="/view-all">
                         {<ImageViewer />}
@@ -53,27 +53,13 @@ export const App: FunctionComponent = () => {
                     <Route exact path="/timeline/:id">
                         {<TimelineId />}
                     </Route>
-                 
                     <Route exact path ="/">
                         <Home />
-            <Navbar />
-            <HamburgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-            <div onClick={(): void => {setMenuOpen(false)}} data-testid= "Clear nav">
-            <Switch>
-                <Route path="/rover_explorer">
-                    <RoverExplorer />
-                </Route>
-                <Route path="/timeline/:id">
-                    {<TimelineId />}
-                </Route>
-                <Route path="/">
-                    <Link to="/rover_explorer" className= {styles.marsbutton}> ENTER MARS</Link>
-                    <Mars />
-                </Route>
-
-            </Switch>
-            </div> 
+                    </Route>
+                </Switch>
         </Router>
+
+     
+     
     );
 }
-
