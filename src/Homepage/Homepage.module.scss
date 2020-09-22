@@ -1,3 +1,18 @@
+@import '../generalStyle.scss';
+
 .homepage {
-    background-color: red;
+    background-color: $colorTextDark;
+}
+.marsbutton {
+    @include roverPageTitle;
+    background-color: #631111;
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4);
+    padding: 24px 50px;
+    font-weight: bolder;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50% ;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
 }

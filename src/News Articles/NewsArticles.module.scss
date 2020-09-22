@@ -1,0 +1,298 @@
+@import '../generalStyle.scss';
+
+// Mobile MEDIUM
+* {
+    box-sizing: border-box;
+}
+.newsContainer {
+    margin: 0 auto;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+        @include title($textColor: $colorTextBeige);
+    }
+    .mainArticleImg {
+        max-width: 100%;
+        height: auto;
+        margin: 0 0 20px 0;
+    }
+    .articlesWrapper {
+        width: 100%;
+    }
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 10px 0;
+    .btn {
+        color: #fff;
+        width: 100%;
+        height: 3.5em;
+        font-size: 0.9em;
+        background: $colorTextRed;
+    }
+}
+.articlesContainer {
+    display: flex;
+    flex-direction: column;
+    background: $colorTextLight;
+    width: 100%;
+    height: 50%;
+    overflow: scroll;
+    color: #fff;
+    margin: 0 0 20px 0;
+    background: #000;
+    .indivArticle {
+        display: flex;
+        // align-items: center;
+        min-height: 170px;
+        max-height: 170px;
+        border: 1px solid $colorTextBeige;
+    }
+    .articleImg {
+        max-width: 32%;
+        height: auto;
+        margin: auto 8px auto 5px;
+    }
+    .articleInfo {
+        margin: 0 0 0 5px;
+    }
+    .articleTitle {
+        @include subtitle();
+        font-size: 1.2em !important;
+        color: $colorTextBeige !important;
+        margin: 10px 0 5px 0;
+    }
+    .summary {
+        font-size: 0.75em;
+        padding: 0;
+        margin: 0px 2px 5px 2px;
+    }
+    .publicationDate {
+        font-size: 0.65em;
+        padding: 0;
+        margin: 0;
+    }
+    .articleLink {
+        text-decoration: none;
+        font-size: 0.65em;
+        color: #fff;
+        margin: 0;
+    }
+}
+
+// Mobile SMALL
+@media only screen and (max-width: 321px) {
+    .articlesContainer {
+        .articleImg {
+            max-width: 30%;
+        }
+        .articleTitle {
+        font-size: 1.2em !important;
+        margin: 15px 0 5px 0;
+        }
+        .summary {
+            font-size: 0.6em;
+        }
+        .publicationDate {
+            font-size: 0.6em;
+        }
+    }
+    .buttonContainer {
+        .btn {
+            font-size: 0.8em;
+        }
+    }
+}
+
+// Mobile LARGE
+@media only screen and (min-width: 376px) and (max-width: 426px) {
+    .articlesContainer {
+        .indivArticle {
+            min-height: 170px;
+            max-height: 170px;
+        }
+        .articleImg {
+            max-width: 35%;
+        }
+        .articleTitle {
+        font-size: 1.2em !important;
+        margin: 10px 0 5px 0;
+        }
+        .summary {
+            font-size: 0.8em;
+            margin: 0px 2px 3px 2px;
+        }
+        .publicationDate {
+            font-size: 0.7em;
+        }
+        .articleLink {
+            font-size: 0.7em;
+        }
+    }
+}
+
+// Tablet 
+@media only screen and (min-width: 426px) and  (max-width: 769px) {
+    .newsContainer {
+        .title {
+            @include title($textColor: $colorTextBeige);
+            font-size: 1.4em !important;
+        }
+        .mainArticleImg {
+            max-width: 70%;
+        }
+    }
+    .buttonContainer {
+        .btn {
+            font-size: 1.2em;
+        }
+    }
+    .articlesContainer {
+        .indivArticle {
+            min-height: 190px;
+            max-height: 190px;
+        }
+        .articleImg {
+            max-width: 25%;
+        }
+        .articleTitle {
+        font-size: 1.4em !important;
+        margin: 15px 0 5px 0;
+        }
+        .summary {
+            font-size: 1em;
+            margin: 0px 2px 15px 2px;
+        }
+        .publicationDate {
+            font-size: 0.9em;
+        }
+        .articleLink {
+            font-size: 0.9em;
+        }
+    }
+}
+// Laptop, Laptop LARGE, 4K
+@media only screen and (min-width: 769px) and  (max-width: 2560px) {
+    .newsContainer {
+        .title {
+            @include title($textColor: $colorTextBeige);
+            font-size: 1.4em !important;
+        }
+        .mainArticleImg {
+            max-width: 60%;
+        }
+    }
+    .buttonContainer {
+        .btn {
+            font-size: 1.2em;
+        }
+    }
+    .articlesContainer {
+        .indivArticle {
+            min-height: 200px;
+            max-height: 200px;
+        }
+        .articleImg {
+            max-width: 20%;
+            height: auto;
+            margin: auto 8px auto 5px;
+        }
+        .articleInfo {
+            margin: 0 0 0 5px;
+        }
+        .articleTitle {
+            @include subtitle();
+            font-size: 1.7em !important;
+            margin: 10px 0 5px 0;
+        }
+        .summary {
+            font-size: 1.1em;
+            padding: 0;
+            margin: 0px 2px 10px 2px;
+        }
+        .publicationDate {
+            font-size: 1em;
+            margin: 0 0 5px 0;
+        }
+        .articleLink {
+            font-size: 1em;
+        }
+    }
+}
+
+// Laptop LARGE
+@media only screen and (min-width: 1025px) and  (max-width: 1441px) {
+    .newsContainer {
+        width: 70vw;
+        .title {
+            @include title($textColor: $colorTextBeige);
+            font-size: 1.6em !important;
+        }
+        .mainArticleImg {
+            max-width: 50%;
+        }
+    }
+    .articlesContainer {
+        .articleImg {
+            max-width: 15%;
+            height: auto;
+            margin: auto 8px auto 5px;
+        }
+        .summary {
+            margin: 0px 2px 20px 2px;
+        }
+    }
+}
+
+// 4K
+@media only screen and (min-width: 1441px) and  (max-width: 2561px) {
+    .newsContainer {
+        width: 70vw;
+        .title {
+            @include title($textColor: $colorTextBeige);
+            font-size: 2.5em !important;
+        }
+        .mainArticleImg {
+            max-width: 50%;
+        }
+    }
+    .buttonContainer {
+        .btn {
+            font-size: 1.6em;
+        }
+    }
+    .articlesContainer {
+        .indivArticle {
+            min-height: 260px;
+            max-height: 260px;
+            align-items: center;
+        }
+        .articleImg {
+            max-width: 250px;
+            height: auto;
+            margin: auto 8px auto 5px;
+        }
+        .articleInfo {
+            margin: 0 0 0 5px;
+        }
+        .articleTitle {
+            @include subtitle();
+            font-size: 2em !important;
+            margin: 0 0 15px 0;
+        }
+        .summary {
+            font-size: 1.5em;
+            margin: 0 0 15px 0;
+        }
+        .publicationDate {
+            font-size: 1.2em;
+            margin: 0 0 5px 0;
+        }
+        .articleLink {
+            font-size: 1.2em;
+        }
+    }
+}

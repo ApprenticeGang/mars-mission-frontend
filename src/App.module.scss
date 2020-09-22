@@ -34,10 +34,9 @@
 .navbarLi {
   display: inline-block;
   transition: 2s;
-
   &:hover {
     background-color: red;
-}
+  }
 }
 
 .navbarLi a {
@@ -45,19 +44,5 @@
   color: white;
   text-align: center;
   padding: 14px 40px;
-  text-decoration: none;
-}
-
-.marsbutton {
-  @include roverPageTitle;
-  background-color: #631111;
-  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4);
-  padding: 24px 50px;
-  font-weight: bolder;
-  border-radius: 15px;
-  position: absolute;
-  left: 50%;
-  top: 50% ;
-  transform: translate(-50%, -50%);
   text-decoration: none;
 }
