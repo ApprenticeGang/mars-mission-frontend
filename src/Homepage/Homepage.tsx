@@ -12,7 +12,9 @@ export const Home: FunctionComponent = () => {
             <NewsArticles />
             <footer className={styles.Footer}>
                 <div className={styles.ImageParent}>
+                    {/* eslint-disable-next-line */}
                     <a href="#top" className={styles.ImageTop} aria-label="Scroll to Top"></a>
+                    {/* eslint-disable-next-line */}
                     <a href="#bottom" className={styles.ImageBottom} aria-label="Jump to Bottom" ></a>
                 </div>
             </footer>
