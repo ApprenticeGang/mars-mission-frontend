@@ -35,7 +35,7 @@ export const Mars: FunctionComponent = () => {
               //focus={null} should prevent globe zoom on marker click but it doesn't :(
               focus={null}
               //Make sure height & width props are not percentage based, else globe will infinitely resize
-              height="100vh"
+              height="60vh"
               globeTexture="/images/Mars_Texture.jpg"
               markers={markers}
               options={options}

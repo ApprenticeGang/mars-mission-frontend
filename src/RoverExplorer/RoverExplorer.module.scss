@@ -28,11 +28,11 @@
 .Content {
     background: url("/images/rover_explorer_page_background.jpg");
     min-height: 825px;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: relative;
 }
-
 
 .GridItem1 {
     @include GridItem;
@@ -64,8 +64,6 @@
     background: url("/images/view_all_images_cover.jpg");
 }
 
-
-
 .GridContainer {
     display: grid;
     grid-template-areas:
@@ -81,26 +79,23 @@
     margin: auto;
     height: 0;
     position: relative;
-
 }
 
 .Header {
     position: relative;
-    height: 100px;
-    background-color: #ffffff;
-    opacity: 0.65;
-    margin:auto;
-   
-   
+    height: 70px;
+    background: rgba(255, 255, 255, 0.65);
+    z-index: 0;
 }
 
 .HeaderText {
     position: absolute;
-    top: 30%; // (may cause problems later) this should be 50% to get the text in the middle of the header but for some reason this works and 50% dosen't.
+    top: 45%; // (may cause problems later) this should be 50% to get the text in the middle of the header but for some reason this works and 50% dosen't.
     left: 50%;
+    margin: auto;
+    white-space: nowrap;
     transform: translate(-50%, -50%);
     @include roverPageTitle;
-   
 }
 
 a:link {

@@ -7,11 +7,11 @@
   @media(max-width: 980px){
     display: flex;
     justify-content: flex-end;
-    height: 50px;
+    height: 70px;
+    z-index: 1;
     // width: 100%;
     background-color:$colorTextDark ; 
-    padding: 20px 15px 0px 0px; 
-
+    padding: 15px 15px 0px 0px;
   }
   button{
     padding-right: 50px;
