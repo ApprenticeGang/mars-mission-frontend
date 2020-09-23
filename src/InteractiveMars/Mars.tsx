@@ -40,6 +40,7 @@ export const Mars: FunctionComponent = () => {
               globeTexture="/images/Mars_Texture.jpg"
               markers={markers}
               options={options}
+              globeCloudsTexture={null}
               width="100vw"
             />
         </section>
