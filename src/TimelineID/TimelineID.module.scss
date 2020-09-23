@@ -1,4 +1,40 @@
-.timelineID {
-    background-color: yellowgreen;
+@import "../generalStyle.scss";
+
+
+.BackgroundColor {
+    background-color: black;
+}
+
+.TimeLineHeading    {
+      @include title($textColor: $colorTextLight);
+}
+
+.RoverInformation   {
+    @include subtitle($textColor: $colorTextLight);
+}
+
+.RoverImage {
+    width: 100%;
+}
+
+.ButtonToRoverImage {
+        @include title;
+        background-color: #9c2828;
+        opacity: 0.9;
+        box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4);
+        padding: 24px 50px;
+        font-weight: bolder;
+        border-radius: 15px;
+        position: fixed;
+        left: 50%;
+        top: 90% ;
+        transform: translate(-50%, -50%);
+        text-decoration: none;
+}
+
+.vertical-timeline-element--work
+{
+    background-color: #9c2828;
+    border-right: 7px solid #631111;
 }
 
