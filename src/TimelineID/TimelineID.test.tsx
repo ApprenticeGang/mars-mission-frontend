@@ -1,6 +1,6 @@
 import React from 'react';
-import { queryByTestId, render } from '@testing-library/react';
-import { TimelineId, getRover } from './TimelineId';
+import {  render } from '@testing-library/react';
+import { TimelineId} from './TimelineId';
 import { MemoryRouter, Route } from 'react-router-dom'
 import { mockAllIsIntersecting } from 'react-intersection-observer/test-utils';
 
