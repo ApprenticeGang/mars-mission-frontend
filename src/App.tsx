@@ -30,8 +30,8 @@ export const App: FunctionComponent = () => {
                 <Route path="/rover_explorer">
                     <RoverExplorer />
                 </Route>
-                <Route path="/timeline/:id">
-                    {<TimelineId />}
+                <Route path="/timeline/:roverName">
+                    <TimelineId />
                 </Route>
                 <Route path="/">
                     <Home />
