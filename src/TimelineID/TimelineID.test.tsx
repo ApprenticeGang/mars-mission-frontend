@@ -11,7 +11,6 @@ test('renders Rover Timeline', () => {
             </Route>
     </MemoryRouter>);
     mockAllIsIntersecting(true);
-
     const timelineElements = queries.getAllByText('Perserverance')
     expect(timelineElements).toHaveLength(4);
 });
@@ -25,3 +24,4 @@ test('if there is no rover with that name displays Unable to find rover', () => 
     const unableToFindMessage = queries.getByText('Unable to find rover with name: NO_ROVER_WITH_THAT_NAME')
     expect(unableToFindMessage).toBeInTheDocument();   
 })
+
