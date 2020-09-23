@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import styles from './ImageViewer.module.scss';
-import { images } from './imageslist'
+import { images, FetchedImageData } from './imageslist'
 
 
 interface GridItem {
@@ -16,12 +16,18 @@ interface GridItem {
 export const ImageViewer: FunctionComponent = () => {
 
 
+
+
+
+    const fetchImages = async (): Promise<FetchedImageData[]> => {
+        return images;
+    };
     const [gridItems, setGridItems] = useState<GridItem[]>(images)
-
-
+    
     useEffect(() => {
-        setGridItems(images)
-    }, []);
+        fetchImages().then(results => setGridItems(results));
+    });
+
 
     return (
         <div >
