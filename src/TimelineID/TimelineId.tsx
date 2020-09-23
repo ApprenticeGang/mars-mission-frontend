@@ -60,7 +60,7 @@ export const TimelineElement: FunctionComponent<TimelineElementProps> = ({ date,
     );
 }
 
-const getRover = (roverName: string | undefined): Rover | undefined => {
+export const getRover = (roverName: string | undefined): Rover | undefined => {
     if (!roverName) {
         return undefined;
     }
