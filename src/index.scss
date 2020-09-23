@@ -15,3 +15,8 @@ code {
 canvas {
   outline: none;
 }
+
+html,
+body {
+  scroll-behavior: smooth;
+}

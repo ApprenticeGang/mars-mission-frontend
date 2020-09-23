@@ -8,7 +8,7 @@ import { RoverExplorer } from "./RoverExplorer/RoverExplorer";
 import { TimelineId } from "./TimelineID/TimelineId";
 import HamburgerMenu from "./Components/Hamburger/Hamburger";
 import Navbar from "./Components/Nav/Nav";
-import {AllImages} from "./ViewAllImages/AllImages";
+import {ImageViewer} from "./ImageViewer/ImageViewer";
 import { Home } from './Homepage/Homepage';
 import { SingleImagePage } from "./SingleImagePage/singleImagePage";
 import { images } from "./SingleImagePage/imagesList";
@@ -30,14 +30,14 @@ export const App: FunctionComponent = () => {
                 <Route path="/rover_explorer">
                     <RoverExplorer />
                 </Route>
-                <Route path="/timeline/:id">
-                    {<TimelineId />}
+                <Route path="/timeline/:roverName">
+                    <TimelineId />
                 </Route>
-                <Route path="/">
+                <Route exact path="/">
                     <Home />
                 </Route>
                 <Route exact path="/view_all">
-                    <AllImages/> 
+                    <ImageViewer/> 
                 </Route>
                 
             </Switch>
