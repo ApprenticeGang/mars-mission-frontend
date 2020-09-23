@@ -3,6 +3,7 @@
 .homepage {
     background-color: $colorTextDark;
 }
+
 .marsbutton {
     @include roverPageTitle;
     background-color: #631111;
@@ -12,7 +13,53 @@
     border-radius: 15px;
     position: absolute;
     left: 50%;
-    top: 50% ;
+    top: 50%;
     transform: translate(-50%, -50%);
     text-decoration: none;
+}
+
+.Footer {
+    background-color: black;
+    height: 43px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+
+
+}
+
+.ImageBottom {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $colorTextLight;
+    padding: 0.25rem;
+    color: $colorTextDark;
+    background: url(/images/scroll_down.png);
+    height: 100%;
+    width: 100%;
+    line-height: 20px;
+
+
+}
+
+.ImageTop {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $colorTextLight;
+    padding: 0.25rem;
+    color: $colorTextDark;
+    background: url(/images/scroll_top.png);
+    height: 100%;
+    width: 100%;
+    line-height: 20px;
+
+}
+
+.ImageParent {
+    height: 20px;
+    width: 25px;
+    margin-left: auto;
+    margin-right: auto;
 }
