@@ -8,6 +8,7 @@ import ReactGlobe, {Marker} from "react-globe";
 import {markers} from "./Markers"
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
+import styles from "./Mars.module.scss";
 
 //Renders tooltips on hover (changing function name breaks tooltips!)
 
@@ -29,7 +30,7 @@ const options = {
 
 export const Mars: FunctionComponent = () => {
     return (
-        <section>
+        <section className={styles.marsContainer}>
             {/* Globe and globe props, refer to documentation @ https://react-globe.netlify.app/*/}
             <ReactGlobe
               //focus={null} should prevent globe zoom on marker click but it doesn't :(
