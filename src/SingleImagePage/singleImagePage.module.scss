@@ -1,0 +1,23 @@
+@import '../generalStyle.scss';
+
+.imgBG {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    .imgCarousel {
+        max-width: 100%;
+        height: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 1px solid yellow;
+    }
+}
+.imgInfo {
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: 50%;
+    background: rgba(255, 255, 255, 0.3); 
+    width: 100vw;
+}
