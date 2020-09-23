@@ -8,7 +8,6 @@ interface HamburgerProps {
     setMenuOpen: (menuOpen: boolean) => void;
 }
 export const HamburgerMenu: FunctionComponent<HamburgerProps> = ({ menuOpen, setMenuOpen }) => {
-   
     return <div className={menuOpen ? `${styles.hamburgerMenu} ${styles.open}` : styles.hamburgerMenu} data-testid="Hamburger Container">
         <button
             data-testid = "Hamburger Button"
