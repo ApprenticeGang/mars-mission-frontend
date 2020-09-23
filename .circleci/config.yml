@@ -5,13 +5,20 @@ executors:
   node-executor:
     docker:
       - image: cimg/node:14.10.0
+    resource_class: small
     working_directory: ~/mars-mission
 jobs:
   test:
     executor: node-executor
     steps:
       - checkout
+      - restore_cache:
+          key: mars-mission-{{ checksum "package-lock.json" }}
       - run: npm install
+      - save_cache:
+          key: mars-mission-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
       - run: npm run test:coverage
       - persist_to_workspace:
           root: .
