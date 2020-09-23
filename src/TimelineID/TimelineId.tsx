@@ -59,8 +59,8 @@ export const TimelineElement: FunctionComponent<TimelineElementProps> = ({ date,
         </VerticalTimelineElement>
     );
 }
-
 export const getRover = (roverName: string | undefined): Rover | undefined => {
+    /* istanbul ignore next */
     if (!roverName) {
         return undefined;
     }
