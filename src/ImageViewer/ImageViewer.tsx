@@ -15,10 +15,6 @@ interface GridItem {
 
 export const ImageViewer: FunctionComponent = () => {
 
-
-
-
-
     const fetchImages = async (): Promise<FetchedImageData[]> => {
         return images;
     };
@@ -37,7 +33,8 @@ export const ImageViewer: FunctionComponent = () => {
             <SearchResults gridItems={gridItems}></SearchResults>
             <footer className={styles.Footer}>
                 <div className={styles.ImageParent}>
-                    <a href="#top" className={styles.Image} aria-label="Scroll to Top" ></a>
+                    {/* eslint-disable-next-line */}
+                    <a href="#top" className={styles.Image} aria-label="Scroll to Top"></a>
                 </div>
 
             </footer>
@@ -59,7 +56,7 @@ const Item: FunctionComponent<GridItemProps> = (props: GridItemProps) => {
         <section>
             <div className={styles.GridItem}>
                 <div className={styles.Info}>{props.id}, {props.sol}, {props.cameraName}, {props.cameraFullName}, {props.earthDate}, {props.roverName}</div>
-                <img className={styles.GridImage} src={props.imageUrl}></img>
+                <img alt="" className={styles.GridImage} src={props.imageUrl}></img>
             </div>
         </section>
     )
@@ -69,11 +66,10 @@ interface SearchResultProps {
     gridItems: GridItem[];
 }
 
-
 const SearchResults: FunctionComponent<SearchResultProps> = (props: SearchResultProps) => {
 
     const photo = images[Math.floor(Math.random() * images.length)];
-    const [image, setImage] = useState(`${photo.imageUrl}`);
+    const [image] = useState(`${photo.imageUrl}`);
 
     const gridItemList = props.gridItems.map((gridItem: GridItemProps) => {
         return <Item id={gridItem.id} sol={gridItem.sol} cameraName={gridItem.cameraName} cameraFullName={gridItem.cameraFullName} imageUrl={gridItem.imageUrl} earthDate={gridItem.earthDate} roverName={gridItem.roverName}></Item>
@@ -83,7 +79,7 @@ const SearchResults: FunctionComponent<SearchResultProps> = (props: SearchResult
 
         <div className={styles.ParentGrid}>
             <div className={styles.BigImage}>
-                <img className={styles.TopImage} src={image} />
+                <img alt="" className={styles.TopImage} src={image} />
             </div >
             <div className={styles.GridContainer}>
                 {gridItemList}
