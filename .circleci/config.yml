@@ -5,18 +5,21 @@ executors:
   node-executor:
     docker:
       - image: cimg/node:14.10.0
+    resource_class: small
     working_directory: ~/mars-mission
 jobs:
   test:
     executor: node-executor
     steps:
       - checkout
+      - restore_cache:
+          key: mars-mission-{{ checksum "package-lock.json" }}
       - run: npm install
-      - run: npm run test:coverage
-      - persist_to_workspace:
-          root: .
+      - save_cache:
+          key: mars-mission-{{ checksum "package-lock.json" }}
           paths:
-            - .
+            - node_modules
+      - run: npm run test:coverage
   deploy:
     executor: node-executor
     steps:
@@ -24,8 +27,9 @@ jobs:
       - run: sudo curl -O https://bootstrap.pypa.io/get-pip.py
       - run: sudo python get-pip.py
       - run: sudo pip install awscli --upgrade
-      - attach_workspace:
-          at: ~/mars-mission
+      - restore_cache:
+          key: mars-mission-{{ checksum "package-lock.json" }}
+      - run: npm install
       - run: npm run build
       - aws-s3/sync:
           from: ~/mars-mission/build
