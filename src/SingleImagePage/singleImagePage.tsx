@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import styles from './singleImagePage.module.scss';
 
-export interface Image {
+export interface RoverImage {
     id: number;
     sol: number;
     cameraName: string;
@@ -12,7 +12,7 @@ export interface Image {
 }
 
 interface ImageProps {
-    image: Image;
+    image: RoverImage;
 }
 
 export const SingleImagePage: FunctionComponent<ImageProps> = ({image}) => {
