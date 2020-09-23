@@ -1,0 +1,115 @@
+@import '../generalStyle.scss';
+
+.GridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 10%;
+    max-width: 1200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 0;
+    position: relative;
+    align-self: center;
+    margin-top: 0;
+
+
+}
+
+.GridImage {
+    max-width: 100%;
+    height: auto;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.TopImage {
+    height: auto;
+    width: 100%;
+}
+
+
+.ParentGrid {
+    display: grid;
+    grid-gap: 20px;
+    padding: 5%;
+}
+
+.ParentGrid>div {
+    padding: 0%;
+    font-size: 30px;
+}
+
+.Header {
+    background: $colorTextDark;
+    height: 100px;
+    @include title;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.headerText {
+    line-height: 100px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+}
+
+.GridImage {
+    border-radius: 3%;
+    border-color: $colorTextLight;
+    border-style: inset;
+    border-width: 0.1px;
+}
+
+.TopImage {
+    border-radius: 3%;
+    border-color: $colorTextLight;
+    border-style: inset;
+    border-width: 0.1px;
+}
+
+.Info {
+    display: none;
+}
+
+.Footer {
+    background-color: $colorTextLight;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.Image {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $colorTextLight;
+    padding: 0.25rem;
+    color: $colorTextDark;
+    background: url(/images/back_to_top.png);
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+    
+}
+
+.ImageParent {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
