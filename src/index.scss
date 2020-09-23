@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+canvas {
+  outline: none;
+}
+
 html,
 body {
   scroll-behavior: smooth;

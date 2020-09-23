@@ -40,13 +40,11 @@
     background: $colorTextLight;
     width: 100%;
     height: 50%;
-    overflow: scroll;
     color: #fff;
     margin: 0 0 20px 0;
     background: #000;
     .indivArticle {
         display: flex;
-        // align-items: center;
         min-height: 170px;
         max-height: 170px;
         border: 1px solid $colorTextBeige;
