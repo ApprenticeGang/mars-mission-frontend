@@ -28,7 +28,7 @@ jobs:
       - run: sudo python get-pip.py
       - run: sudo pip install awscli --upgrade
       - restore_cache:
-          - key: mars-mission-{{ checksum "package-lock.json" }}
+          key: mars-mission-{{ checksum "package-lock.json" }}
       - run: npm install
       - run: npm run build
       - aws-s3/sync:
