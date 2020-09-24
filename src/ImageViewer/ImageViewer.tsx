@@ -12,6 +12,7 @@ interface GridItem {
 }
 
 /* eslint-disable */
+/* istanbul ignore next */
 const fetchImages = async (): Promise<GridItem[]> => {
     return fetch(`${process.env.REACT_APP_API_URL}/api/rovers/spirit/images`)
     .then(response => response.json())
@@ -52,6 +53,7 @@ interface GridItemProps {
     earthDate: string;
     roverName: string;
 }
+/* istanbul ignore next */
 const Item: FunctionComponent<GridItemProps> = (props: GridItemProps) => {
     return (
         <section>
@@ -67,19 +69,18 @@ interface SearchResultProps {
     gridItems: GridItem[];
 }
 
-
+/* istanbul ignore next */
 const SearchResults: FunctionComponent<SearchResultProps> = ({gridItems} ) => {
-    
     let image: string| undefined = undefined;
     if (gridItems.length > 0) {
        image = gridItems[Math.floor(Math.random() * gridItems.length)].imageUrl;
     }
-    
-    const gridItemList = gridItems.map((gridItem: GridItemProps) => {
+    /* istanbul ignore next */
+const gridItemList = gridItems.map((gridItem: GridItemProps) => {
         return <Item id={gridItem.id} sol={gridItem.sol} cameraName={gridItem.cameraName} cameraFullName={gridItem.cameraFullName} imageUrl={gridItem.imageUrl} earthDate={gridItem.earthDate} roverName={gridItem.roverName}></Item>
     })
     return (
-
+        /* istanbul ignore next */
         <div className={styles.ParentGrid}>
             <div className={styles.BigImage}>
               {image &&   <img className={styles.TopImage} src={image} />}
