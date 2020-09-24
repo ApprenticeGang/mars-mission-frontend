@@ -1,6 +1,6 @@
-import React, { FunctionComponent, useState, useEffect} from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 import styles from './ImageViewer.module.scss';
-
+import {useParams} from "react-router-dom";
 interface GridItem {
     id: number;
     sol: number;
@@ -11,17 +11,22 @@ interface GridItem {
     roverName: string;
 }
 
-/* eslint-disable */
-/* istanbul ignore next */
-const fetchImages = async (): Promise<GridItem[]> => {
-    return fetch(`${process.env.REACT_APP_API_URL}/api/rovers/spirit/images`)
-    .then(response => response.json())
-    .then(data => data as GridItem[])
-};
+interface RoverName {
+    roverName: string;
+}
 
 export const ImageViewer: FunctionComponent = () => {
 
+    /* eslint-disable */
+    /* istanbul ignore next */
 
+    const roverName: RoverName = useParams();
+    console.log(roverName)
+    const fetchImages = async (): Promise<GridItem[]> => {
+        return fetch(`${process.env.REACT_APP_API_URL}/api/rovers/${roverName.roverName}/images`)
+            .then(response => response.json())
+            .then(data => data as GridItem[])
+    };
     const [gridItems, setGridItems] = useState<GridItem[]>([])
     useEffect(() => {
         fetchImages().then(results => setGridItems(results));
@@ -59,7 +64,7 @@ const Item: FunctionComponent<GridItemProps> = (props: GridItemProps) => {
         <section>
             <div className={styles.GridItem}>
                 <div className={styles.Info}>{props.id}, {props.sol}, {props.cameraName}, {props.cameraFullName}, {props.earthDate}, {props.roverName}</div>
-                <img alt = "grid picture" className={styles.GridImage} src={props.imageUrl}></img>
+                <img alt="grid picture" className={styles.GridImage} src={props.imageUrl}></img>
             </div>
         </section>
     )
@@ -70,20 +75,20 @@ interface SearchResultProps {
 }
 
 /* istanbul ignore next */
-const SearchResults: FunctionComponent<SearchResultProps> = ({gridItems} ) => {
-    let image: string| undefined = undefined;
+const SearchResults: FunctionComponent<SearchResultProps> = ({ gridItems }) => {
+    let image: string | undefined = undefined;
     if (gridItems.length > 0) {
-       image = gridItems[Math.floor(Math.random() * gridItems.length)].imageUrl;
+        image = gridItems[Math.floor(Math.random() * gridItems.length)].imageUrl;
     }
     /* istanbul ignore next */
-const gridItemList = gridItems.map((gridItem: GridItemProps) => {
+    const gridItemList = gridItems.map((gridItem: GridItemProps) => {
         return <Item id={gridItem.id} sol={gridItem.sol} cameraName={gridItem.cameraName} cameraFullName={gridItem.cameraFullName} imageUrl={gridItem.imageUrl} earthDate={gridItem.earthDate} roverName={gridItem.roverName}></Item>
     })
     return (
         /* istanbul ignore next */
         <div className={styles.ParentGrid}>
             <div className={styles.BigImage}>
-              {image &&   <img className={styles.TopImage} src={image} />}
+                {image && <img className={styles.TopImage} src={image} />}
             </div >
             <div className={styles.GridContainer}>
                 {gridItemList}
