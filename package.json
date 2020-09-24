@@ -59,7 +59,9 @@
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!src/index.tsx",
-      "!src/react-app-env.d.ts"
+      "!src/react-app-env.d.ts",
+      "!src/ImageViewer/ImageViewer.tsx"
+
     ],
     "coverageThreshold": {
       "global": {
