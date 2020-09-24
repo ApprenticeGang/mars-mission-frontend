@@ -16,12 +16,13 @@ interface GridItem {
 export const ImageViewer: FunctionComponent = () => {
 
     const fetchImages = async (): Promise<FetchedImageData[]> => {
+        await Promise.resolve(images);
         return images;
     };
     const [gridItems, setGridItems] = useState<GridItem[]>(images)
     
     useEffect(() => {
-        fetchImages().then(results => setGridItems(results));
+        void fetchImages().then(results => setGridItems(results));
     });
 
 

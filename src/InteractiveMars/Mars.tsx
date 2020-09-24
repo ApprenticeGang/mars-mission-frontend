@@ -10,9 +10,11 @@ import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 import styles from "./Mars.module.scss";
 
+
 //Renders tooltips on hover (changing function name breaks tooltips!)
 
 export function markerTooltipRenderer(marker: Marker): string {
+  /*eslint-disable-next-line*/
   return `ROVER: ${marker.rover}`;
 }
 
