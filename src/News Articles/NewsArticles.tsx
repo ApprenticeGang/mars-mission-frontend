@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import styles from './NewsArticles.module.scss';
 
-export interface Article {
-    image_url?: string | undefined;
+export interface Article{
+    imageUrl?: string | undefined;
     title?: string;
-    article_url?: string;
+    articleUrl?: string;
     summary?: string | undefined;
-    publish_date?: string | undefined;
+    publishDate?: string | undefined;
 }
 
 interface NewsArticleProps {
@@ -14,20 +14,20 @@ interface NewsArticleProps {
 }
 
 export const fetchNewsArticles = async (): Promise<Article[]> => {
-
         return fetch("https://mars-mission-backend.herokuapp.com/api/articles")
         .then(response => response.json())
+        .then(data => data as Article[])
      };
 
 const NewsArticle: FunctionComponent<NewsArticleProps> = ({article}) => {
     return (
         <div className={styles.indivArticle}>
-            <img className={styles.articleImg} alt="" src={article.image_url} />
+            <img className={styles.articleImg} alt="" src={article.imageUrl} />
             <div className={styles.articleInfo}>
                 <h4 className={styles.articleTitle}>{article.title}</h4>
                 <p className={styles.summary}>{article.summary}</p>
-                <p className={styles.publicationDate}>{article.publish_date}</p>
-                <a className={styles.articleLink} href={article.article_url}>Read now</a>
+                <p className={styles.publicationDate}>{article.publishDate}</p>
+                <a className={styles.articleLink} href={article.articleUrl}>Read now</a>
             </div>
         
         </div>
@@ -38,11 +38,9 @@ export const NewsArticles: FunctionComponent = () => {
     const [articles, setArticles] = useState<Article[]>([]);
 
     useEffect(() => {
-        fetchNewsArticles()
+        void fetchNewsArticles()
             .then(response => setArticles(response))
     }, []);
-
-    console.log(fetchNewsArticles());
 
     const articleList = articles.map((article) => {
         return <NewsArticle article={article} />
