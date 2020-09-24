@@ -4,14 +4,9 @@ import { useParams, Link } from "react-router-dom";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-interface Rover {
-    name: string;
-    information: string;
-    imageUrl: string;
-}
 
 export interface TimelineEvent {
-    image_url?: string | undefined;
+    imageUrl?: string | undefined;
     heading: string;
     body: string;
     date: string;
@@ -42,14 +37,14 @@ export const TimelineId: FunctionComponent = () => {
     return (
         <section className={styles.BackgroundColor}>  
             <VerticalTimeline>
-                {timeline.map(timelineEntry => <TimelineElement date={timelineEntry.date} heading={timelineEntry.heading} image_url={timelineEntry.image_url} body={timelineEntry.body}/>)   }
+                {timeline.map(timelineEntry => <TimelineElement date={timelineEntry.date} heading={timelineEntry.heading} imageUrl={timelineEntry.imageUrl} body={timelineEntry.body}/>)   }
             </VerticalTimeline>
             <Link to="/timeline/:roverName" className={styles.ButtonToRoverImage}>{roverName} Image explorer</Link>
         </section>
     )
 };
 /* istanbul ignore next */
-export const TimelineElement: FunctionComponent<TimelineEvent> = ({ date, heading, image_url, body }) => {
+export const TimelineElement: FunctionComponent<TimelineEvent> = ({ date, heading, imageUrl, body }) => {
     return (
         <VerticalTimelineElement
             data-testid = 'Timeline Element'
@@ -60,7 +55,7 @@ export const TimelineElement: FunctionComponent<TimelineEvent> = ({ date, headin
             iconStyle={{ background: '#631111', color: '#631111' }}
         >
             <h3 data-testid="Timeline Header" className={styles.TimeLineHeading}>{heading}</h3>
-            <img className={styles.RoverImage} src={image_url} alt="rover" />
+            <img className={styles.RoverImage} src={imageUrl} alt="rover" />
             <p className={styles.RoverInformation}>
                 {body}
             </p>
