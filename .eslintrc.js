@@ -21,7 +21,6 @@
         { selector: "function", format: [ "strictCamelCase", "StrictPascalCase"] },
         { selector: "typeLike", format: [ "StrictPascalCase"] },
     ],
-
-  
   }
+
 }

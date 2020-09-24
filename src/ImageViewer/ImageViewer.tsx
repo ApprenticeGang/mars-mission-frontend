@@ -21,7 +21,7 @@ export const ImageViewer: FunctionComponent = () => {
     /* istanbul ignore next */
 
     const roverName: RoverName = useParams();
-    console.log(roverName)
+    console.log(roverName.roverName)
     const fetchImages = async (): Promise<GridItem[]> => {
         return fetch(`${process.env.REACT_APP_API_URL}/api/rovers/${roverName.roverName}/images`)
             .then(response => response.json())
@@ -41,7 +41,8 @@ export const ImageViewer: FunctionComponent = () => {
             <SearchResults gridItems={gridItems}></SearchResults>
             <footer className={styles.Footer}>
                 <div className={styles.ImageParent}>
-                    <a href="#top" className={styles.Image} aria-label="Scroll to Top" ></a>
+                    {/* eslint-disable-next-line */}
+                    <a href="#top" className={styles.Image} aria-label="Scroll to Top"></a>
                 </div>
 
             </footer>

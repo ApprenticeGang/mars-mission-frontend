@@ -20,6 +20,10 @@ jobs:
           paths:
             - node_modules
       - run: npm run test:coverage
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
   deploy:
     executor: node-executor
     steps:
@@ -27,8 +31,8 @@ jobs:
       - run: sudo curl -O https://bootstrap.pypa.io/get-pip.py
       - run: sudo python get-pip.py
       - run: sudo pip install awscli --upgrade
-      - restore_cache:
-          key: mars-mission-{{ checksum "package-lock.json" }}
+      - attach_workspace:
+          at: ~/mars-mission
       - run: npm install
       - run: npm run build
       - aws-s3/sync:
