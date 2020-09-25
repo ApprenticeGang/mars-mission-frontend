@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import styles from './ImageViewer.module.scss';
 import { useParams } from "react-router-dom";
-import { off } from "process";
 
 interface GridItem {
     id: number;
