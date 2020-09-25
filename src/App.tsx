@@ -17,6 +17,7 @@ import { images } from "./SingleImagePage/imagesList";
 export const App: FunctionComponent = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
+    /* istanbul ignore next */
     return (
         
         <Router>
