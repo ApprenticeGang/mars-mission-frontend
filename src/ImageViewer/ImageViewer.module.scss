@@ -88,6 +88,27 @@
     display: none;
 }
 
+.Image {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $colorTextLight;
+    padding: 0.25rem;
+    color: $colorTextDark;
+    background: url(/images/back_to_top.png);
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+    
+}
+
+.ImageParent {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .Footer {
     background-color: $colorTextLight;
     height: 40px;
