@@ -82,13 +82,12 @@ const Item: FunctionComponent<GridItemProps> = (props: GridItemProps) => {
 
             <div className={style} onClick={() => { Off() }}>
                 <div className={styles.imgBG}>
-                    <p className={styles.RoverName}>title </p>
+            
                     <img className={styles.imgCarousel} src={props.imageUrl} alt=""></img>
                     <div className={styles.imgInfo}>
                         <div className={styles.infoWrapper}>
                             <p>ID: {props.id}</p>
                             <p>Sol: {props.sol}</p>
-                            <p>Camera Name : {props.cameraName}</p>
                             <p>Earth Date: {props.earthDate}</p>
                             {/* <p>: {props.earthDate}</p> */}
                         </div>
