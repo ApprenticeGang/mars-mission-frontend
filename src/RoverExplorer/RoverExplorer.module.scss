@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
 @import "../generalStyle.scss";
 
+
+$colorTextFade: rgba(0,0,0,0.4);
+
 @mixin GridItem {
     align-items: center;
     text-align: center;
@@ -25,7 +28,7 @@
 
 .Content {
     background: url("/images/rover_explorer_page_background.jpg");
-    min-height: 825px;
+    height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -37,24 +40,36 @@
     @include GridItem;
     grid-area: one;
     background: url("/images/perserverance_rover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $colorTextFade;
 }
 
 .GridItem2 {
     @include GridItem;
     grid-area: two;
     background: url("/images/oppertunity_rover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $colorTextFade;
 }
 
 .GridItem3 {
     @include GridItem;
     grid-area: three;
     background: url("/images/spirit_rover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $colorTextFade;
 }
 
 .GridItem4 {
     @include GridItem;
     grid-area: four;
     background: url("/images/curiosity_rover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $colorTextFade;
 }
 
 .GridItem5 {
