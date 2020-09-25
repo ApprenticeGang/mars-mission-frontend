@@ -1,5 +1,5 @@
 @import '../generalStyle.scss';
-
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani&display=swap');
 .GridContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -17,7 +17,7 @@
 
 .GridImage {
     max-width: 100%;
-    width:100%;
+    width: 100%;
     height: auto;
     grid-column-start: 1;
     grid-row-start: 3;
@@ -44,7 +44,6 @@
 .Header {
     background: $colorTextDark;
     height: 100px;
-    @include title;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -55,6 +54,9 @@
     width: 100%;
     height: 100%;
     margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 26px;
+    color: $colorTextRed;
 
 }
 
@@ -71,14 +73,16 @@
     border-style: inset;
     border-width: 0.1px;
 }
-@media only screen and (min-width: 1000px){
-    .ParentGrid{
+
+@media only screen and (min-width: 1000px) {
+    .ParentGrid {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
-    .TopImage{
+
+    .TopImage {
         width: 60vw;
     }
 }
@@ -98,7 +102,7 @@
     height: 100%;
     width: 100%;
     line-height: 40px;
-    
+
 }
 
 .ImageParent {
@@ -122,7 +126,8 @@
     margin-right: auto;
 
 }
-.OverlayOn{
+
+.OverlayOn {
     position: fixed;
     display: flex;
     width: 100%;
@@ -131,7 +136,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0, 0.75);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 1;
     cursor: pointer;
 
@@ -142,11 +147,11 @@
         justify-content: center;
         width: 100%;
         margin: auto 0;
-        background: rgba(255, 255, 255, 0.3); 
+        background: rgba(255, 255, 255, 0.6);
         // background: yellow;
     }
-  
-    .imgCarousel{
+
+    .imgCarousel {
         border-color: yellow;
         max-width: 40vw;
         height: auto;
@@ -156,33 +161,40 @@
         background-size: cover;
         // margin: auto 0;
     }
+
     .imgInfo {
         position: relative;
         display: flex;
         align-items: center;
         text-align: left;
-        background: rgba(255, 255, 255, 0.3); 
-            // bottom: 0;
+        background: rgba(255, 255, 255, 0.6);
+        // bottom: 0;
         width: 100vw;
         padding: 0 20px;
         font-size: 0.7em;
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+
         .infoWrapper {
             margin: 0 auto;
             padding: 0 30px;
             // width: 100%;
         }
+
         P {
             margin: 10px 0;
         }
 
-        
+
     }
+
     .RoverName {
-        color:white;
+        color: white;
     }
 }
 
-.OverlayOff{
-    display:none;
+.OverlayOff {
+    display: none;
 }
-
