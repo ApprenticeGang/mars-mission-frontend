@@ -26,20 +26,4 @@ test('The burger menu doesnt contain open inititally. When clicked it does conta
     const homeLink = getByTestId("Home Page Link");
     fireEvent.click(homeLink);
     expect(container.className).not.toContain("open");  
-})
-
-test('No open class when clicked outside of hamburger container', () =>{
-    const {getByTestId} = render(<App />)
-    const container = getByTestId("Hamburger Container");
-    const body = getByTestId("Hamburger Button");
-    expect(container.className).not.toContain("open");
-    fireEvent.click(body);
-    expect(container.className).toContain("open");
-    const bodyClick = getByTestId("Clear nav");
-    fireEvent.click(bodyClick);
-    expect(container.className).not.toContain("open");  
-
-})
-
-
-
+});
