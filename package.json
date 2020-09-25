@@ -60,8 +60,7 @@
       "src/**/*.{ts,tsx}",
       "!src/index.tsx",
       "!src/react-app-env.d.ts",
-      "!src/ImageViewer/ImageViewer.tsx"
-
+      "!src/ImageViewer/ImageViewer.tsx",
       "!src/News Articles/NewsArticles.tsx"
     ],
     "coverageThreshold": {
