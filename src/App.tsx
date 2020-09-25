@@ -36,7 +36,7 @@ export const App: FunctionComponent = () => {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route exact path="/view_all">
+                <Route exact path="/view_all/:roverName">
                     <ImageViewer/> 
                 </Route>
                 

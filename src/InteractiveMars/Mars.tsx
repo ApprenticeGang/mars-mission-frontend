@@ -1,8 +1,7 @@
 /* TO-DO 
 - Make marker onClick zoom less janky (or disable alltogether)
 - Label markers with rover names without having to hover? (ThreeJS text geometry?)
-*/
-
+/* eslint-disable */
 import React, {FunctionComponent} from "react";
 import ReactGlobe, {Marker} from "react-globe";
 import {markers} from "./Markers"

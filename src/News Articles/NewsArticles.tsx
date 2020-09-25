@@ -38,7 +38,7 @@ export const NewsArticles: FunctionComponent = () => {
     const [articles, setArticles] = useState<Article[]>([]);
 
     useEffect(() => {
-        void fetchNewsArticles()
+     void fetchNewsArticles()
             .then(response => setArticles(response))
     }, []);
 

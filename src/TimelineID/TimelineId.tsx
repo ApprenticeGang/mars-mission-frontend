@@ -39,7 +39,7 @@ export const TimelineId: FunctionComponent = () => {
             <VerticalTimeline>
                 {timeline.map(timelineEntry => <TimelineElement date={timelineEntry.date} heading={timelineEntry.heading} imageUrl={timelineEntry.imageUrl} body={timelineEntry.body}/>)   }
             </VerticalTimeline>
-            <Link to="/timeline/:roverName" className={styles.ButtonToRoverImage}>{roverName} Image explorer</Link>
+            <Link to={`/view_all/${roverName}`} className={styles.ButtonToRoverImage}>{roverName} Image explorer</Link>
         </section>
     )
 };
