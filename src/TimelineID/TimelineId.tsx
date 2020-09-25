@@ -1,47 +1,50 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent , useState, useEffect} from "react";
 import styles from './TimelineID.module.scss';
 import { useParams, Link } from "react-router-dom";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-interface Rover {
-    name: string;
-    information: string;
-    imageUrl: string;
+
+export interface TimelineEvent {
+    imageUrl?: string | undefined;
+    heading: string;
+    body: string;
+    date: string;
 }
+
 
 interface RoverName{
     roverName: string;
 }
 
+/* istanbul ignore next */
+const fetchTimelines = async (roverName: string): Promise<TimelineEvent[]> => {
+    const response= await fetch(`https://mars-mission-backend-staging.herokuapp.com/api/rovers/${roverName}/timeline`);
+    const json = await response.json()
+    return json
+    // .then(response => response.json())
+
+ };
+/* istanbul ignore next */
 export const TimelineId: FunctionComponent = () => {
-  
-    const params: RoverName = useParams();
-    const rover = getRover(params.roverName);
-    if (!rover) {
-        return <div>Unable to find rover with name: {params.roverName}</div>
-    }
+    const [timeline, setTimeline] = useState<TimelineEvent[]>([]);
+    const {roverName}: RoverName = useParams();
+    useEffect(() => {
+                fetchTimelines(roverName)
+                    .then(response => setTimeline(response))
+            }, [roverName]);
+
     return (
-        <section className={styles.BackgroundColor}>
+        <section className={styles.BackgroundColor}>  
             <VerticalTimeline>
-                <TimelineElement date = {"2011"} heading ={rover.name} image = {rover.imageUrl} text = {rover.information}/>
-                <TimelineElement date = {"2012"} heading ={rover.name} image = {rover.imageUrl} text = {rover.information}/>
-                <TimelineElement date = {"2013"} heading ={rover.name} image = {rover.imageUrl} text = {rover.information}/>
-                <TimelineElement date = {"2014"} heading ={rover.name} image = {rover.imageUrl} text = {rover.information}/>
+                {timeline.map(timelineEntry => <TimelineElement date={timelineEntry.date} heading={timelineEntry.heading} imageUrl={timelineEntry.imageUrl} body={timelineEntry.body}/>)   }
             </VerticalTimeline>
-            <Link to={`/view_all/${params.roverName}`} className={styles.ButtonToRoverImage}>{rover.name} Image explorer</Link>
+            <Link to={`/view_all/${roverName}`} className={styles.ButtonToRoverImage}>{roverName} Image explorer</Link>
         </section>
     )
 };
-
-interface TimelineElementProps {
-    date: string;
-    heading: string;
-    image: string;
-    text: string;
-}
-
-export const TimelineElement: FunctionComponent<TimelineElementProps> = ({ date, heading, image, text }) => {
+/* istanbul ignore next */
+export const TimelineElement: FunctionComponent<TimelineEvent> = ({ date, heading, imageUrl, body }) => {
     return (
         <VerticalTimelineElement
             data-testid = 'Timeline Element'
@@ -52,26 +55,10 @@ export const TimelineElement: FunctionComponent<TimelineElementProps> = ({ date,
             iconStyle={{ background: '#631111', color: '#631111' }}
         >
             <h3 data-testid="Timeline Header" className={styles.TimeLineHeading}>{heading}</h3>
-            <img className={styles.RoverImage} src={image} alt="rover" />
+            <img className={styles.RoverImage} src={imageUrl} alt="rover" />
             <p className={styles.RoverInformation}>
-                {text}
+                {body}
             </p>
         </VerticalTimelineElement>
     );
 }
-export const getRover = (roverName: string | undefined): Rover | undefined => {
-    /* istanbul ignore next */
-    if (!roverName) {
-        return undefined;
-    }
-    return rovers.find(rover => rover.name.toLowerCase() === roverName.toLowerCase());
-    
-} 
-
-const rovers: Rover[] = [
-    { name: "Spirit", information: "Rover 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", imageUrl: "/images/spirit_timeline.png" },
-    { name: "Opportunity", information: "Rover on mars 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  imageUrl: "/images/opportunity_timeline.png" },
-    { name: "Curiosity", information: "Rover on mars 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  imageUrl: "/images/curiosity_timeline.png" },
-    { name: "Perserverance", information: "Rover on mars 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", imageUrl: "/images/perserverance_timeline.png" },
-]
-
