@@ -50,7 +50,6 @@ export const NewsArticles: FunctionComponent = () => {
     return (
         <section className={styles.newsContainer}>
             <h2 className={styles.title}>News</h2>
-            <img className={styles.mainArticleImg} alt="" src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG" />
             <div className={styles.articlesWrapper}>
                 <div className={styles.titleContainer}>
                     <h3 className="newsTitle">Articles</h3>

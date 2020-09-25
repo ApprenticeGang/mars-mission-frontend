@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import styles from './ImageViewer.module.scss';
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { off } from "process";
 
 interface GridItem {
     id: number;
@@ -10,12 +11,12 @@ interface GridItem {
     imageUrl: string;
     earthDate: string;
     roverName: string;
+    rover: string;
 }
 
 interface RoverName {
     roverName: string;
 }
-
 
 export const ImageViewer: FunctionComponent = () => {
     /* eslint-disable */
@@ -58,16 +59,43 @@ interface GridItemProps {
     imageUrl: string;
     earthDate: string;
     roverName: string;
+
 }
 /* istanbul ignore next */
 
 const Item: FunctionComponent<GridItemProps> = (props: GridItemProps) => {
+    const OverlayOff = styles.OverlayOff
+    const OverlayOn = styles.OverlayOn
+    const [style, setStyle] = useState(OverlayOff)
+    const Off = () => {
+        setStyle(OverlayOff)
+    }
+    const On = () => {
+        setStyle(OverlayOn)
+    }
     return (
         <section>
             <div className={styles.GridItem}>
-                <div className={styles.Info}>{props.id}, {props.sol}, {props.cameraName}, {props.cameraFullName}, {props.earthDate}, {props.roverName}</div>
-                <img alt="" className={styles.GridImage} src={props.imageUrl}></img>
+                <div className={styles.Info} >{props.id}, {props.sol}, {props.cameraName}, {props.cameraFullName}, {props.earthDate}, {props.roverName}</div>
+                <img onClick={() => { On() }} alt="grid picture" className={styles.GridImage} src={props.imageUrl}></img>
             </div>
+
+            <div className={style} onClick={() => { Off() }}>
+                <div className={styles.imgBG}>
+            
+                    <img className={styles.imgCarousel} src={props.imageUrl} alt=""></img>
+                    <div className={styles.imgInfo}>
+                        <div className={styles.infoWrapper}>
+                            <p>ID: {props.id}</p>
+                            <p>Sol: {props.sol}</p>
+                            <p>Earth Date: {props.earthDate}</p>
+                            {/* <p>: {props.earthDate}</p> */}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
         </section>
     )
 };

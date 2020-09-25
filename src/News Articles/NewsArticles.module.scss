@@ -1,11 +1,15 @@
 @import '../generalStyle.scss';
 
+h3 {
+    @include subtitle($textColor: $colorTextLight);
+}
 // Mobile MEDIUM
 * {
     box-sizing: border-box;
 }
 .newsContainer {
     margin: 0 auto;
+    margin-top: 120px;
     width: 90vw;
     display: flex;
     flex-direction: column;
@@ -28,7 +32,7 @@
     margin: 0 0 10px 0;
     background: $colorTextRed;
     .newsTitle {
-        @include subtitle($textColor: $colorTextBeige);
+        @include subtitle($textColor: $colorTextLight);
         width: 100%;
         height: 3.5em;
         font-size: 0.9em;
@@ -41,13 +45,13 @@
     width: 100%;
     height: 500px;
     color: #fff;
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
     background: #000;
     overflow: scroll;
     .indivArticle {
         display: flex;
-        min-height: 250px;
-        max-height: 250px;
+        min-height: 220px;
+        max-height: 220px;
         border: 1px solid $colorTextBeige;
     }
     .articleImg {
@@ -65,6 +69,7 @@
         margin: 10px 0 5px 0;
     }
     .summary {
+        @include subtitle($textColor: $colorTextLight);
         font-size: 0.75em;
         padding: 0;
         margin: 0px 2px 5px 2px;
@@ -101,6 +106,7 @@
     }
     .titleContainer {
         .newsTitle {
+            @include subtitle($textColor: $colorTextLight);
             font-size: 0.8em;
         }
     }
@@ -110,8 +116,8 @@
 @media only screen and (min-width: 376px) and (max-width: 426px) {
     .articlesContainer {
         .indivArticle {
-            min-height: 170px;
-            max-height: 170px;
+            min-height: 200px;
+            max-height: 200px;
         }
         .articleImg {
             max-width: 35%;
@@ -146,6 +152,7 @@
     }
     .titleContainer {
         .newsTitle {
+            @include subtitle($textColor: $colorTextLight);
             font-size: 1.2em;
         }
     }
@@ -186,13 +193,14 @@
     }
     .titleContainer {
         .newsTitle {
+            @include subtitle($textColor: $colorTextLight);
             font-size: 1.2em;
         }
     }
     .articlesContainer {
         .indivArticle {
-            min-height: 200px;
-            max-height: 200px;
+            min-height: 250px;
+            max-height: 250px;
         }
         .articleImg {
             max-width: 20%;
@@ -233,6 +241,11 @@
         .mainArticleImg {
             max-width: 50%;
         }
+        .titleContainer {
+        .newsTitle {
+            @include subtitle($textColor: $colorTextLight);
+            font-size: 1.2em;
+        }
     }
     .articlesContainer {
         .articleImg {
@@ -260,6 +273,7 @@
     }
     .titleContainer {
         .newsTitle {
+            @include subtitle($textColor: $colorTextLight);
             font-size: 1.6em;
         }
     }
@@ -294,4 +308,5 @@
             font-size: 1.2em;
         }
     }
+}
 }

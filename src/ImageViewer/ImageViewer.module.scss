@@ -13,8 +13,6 @@
     position: relative;
     align-self: center;
     margin-top: 0;
-
-
 }
 
 .GridImage {
@@ -50,8 +48,6 @@
     text-align: center;
     display: flex;
     justify-content: center;
-
-
 }
 
 .headerText {
@@ -75,23 +71,21 @@
     border-style: inset;
     border-width: 0.1px;
 }
+@media only screen and (min-width: 1000px){
+    .ParentGrid{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .TopImage{
+        width: 60vw;
+    }
+}
+
 
 .Info {
     display: none;
-}
-
-.Footer {
-    background-color: $colorTextLight;
-    height: 40px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-
 }
 
 .Image {
@@ -114,3 +108,81 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.Footer {
+    background-color: $colorTextLight;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.OverlayOn{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.75);
+    z-index: 1;
+    cursor: pointer;
+
+    .imgBG {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: auto 0;
+        background: rgba(255, 255, 255, 0.3); 
+        // background: yellow;
+    }
+  
+    .imgCarousel{
+        border-color: yellow;
+        max-width: 40vw;
+        height: auto;
+        padding: 0 0 10px 0;
+        // background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // margin: auto 0;
+    }
+    .imgInfo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        background: rgba(255, 255, 255, 0.3); 
+            // bottom: 0;
+        width: 100vw;
+        padding: 0 20px;
+        font-size: 0.7em;
+        .infoWrapper {
+            margin: 0 auto;
+            padding: 0 30px;
+            // width: 100%;
+        }
+        P {
+            margin: 10px 0;
+        }
+
+        
+    }
+    .RoverName {
+        color:white;
+    }
+}
+
+.OverlayOff{
+    display:none;
+}
+
