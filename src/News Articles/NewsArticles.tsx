@@ -14,7 +14,8 @@ interface NewsArticleProps {
 }
 
 export const fetchNewsArticles = async (): Promise<Article[]> => {
-        return fetch("https://mars-mission-backend.herokuapp.com/api/articles")
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        return fetch(`${process.env.REACT_APP_API_URL}/api/articles`)
         .then(response => response.json())
         .then(data => data as Article[])
      };
