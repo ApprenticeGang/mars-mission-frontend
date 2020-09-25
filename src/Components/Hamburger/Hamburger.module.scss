@@ -7,15 +7,15 @@
   @media(max-width: 980px){
     display: flex;
     justify-content: flex-end;
-    height: 70px;
+    height: 50px;
     z-index: 1;
-    // width: 100%;
     background-color:$colorTextDark ; 
-    padding: 15px 15px 0px 0px;
   }
   button{
-    padding-right: 50px;
+    margin-top: 15px;
+    padding-right: 55px;
     margin-right:40px;
+    z-index: 10;
   }
 }
 .navbar{
@@ -30,6 +30,7 @@
     height: 0.25rem;
     border-radius: 2px;
     transition:all ease 0.7s;
+    z-index: 10;
 
   }  
     i:nth-child(1) {
@@ -48,12 +49,13 @@
     display: block;  
     background-color: $colorTextDark; 
     padding: 0px 0px 20px 0px;
-    z-index: 1;
+    z-index: 5;
+    width: 100%;
   }
   .navbarList{
     padding: 0px;
     margin: 40px 0px 20px 0px;
-    width: 100vw;
+    width: 100%;
   }
   
   .navbarLi{
@@ -94,7 +96,7 @@
   border: none;
   cursor: pointer;
   z-index: 10;
-  
+ 
   padding-right: 40px;
   
   i {
