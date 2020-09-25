@@ -25,7 +25,7 @@
 
 .Content {
     background: url("/images/rover_explorer_page_background.jpg");
-    min-height: 825px;
+    height: calc(100vh - 53px);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -13,7 +13,6 @@ export const RoverExplorer: FunctionComponent = () => {
             <Link to="/timeline/oppertunity" className={styles.GridItem2}>Opportunity</Link>
             <Link to="/timeline/spirit" className={styles.GridItem3}>Spirit</Link>
             <Link to="/timeline/curiosity" className={styles.GridItem4}>Curiosity</Link>
-            <Link to="/view_all" className={styles.GridItem5}>View All</Link>
           </div>
         </div>
         </section>
