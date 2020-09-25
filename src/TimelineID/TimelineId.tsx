@@ -18,11 +18,10 @@ interface RoverName{
 }
 
 /* istanbul ignore next */
+/* eslint-disable */
 const fetchTimelines = async (roverName: string): Promise<TimelineEvent[]> => {
-    const response= await fetch(`https://mars-mission-backend-staging.herokuapp.com/api/rovers/${roverName}/timeline`);
-    const json = await response.json()
-    return json
-    // .then(response => response.json())
+    const response= await fetch(`${process.env.REACT_APP_API_URL}/api/rovers/${roverName}/timeline`);
+    return await response.json();
 
  };
 /* istanbul ignore next */
